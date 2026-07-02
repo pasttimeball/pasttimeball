@@ -85,6 +85,19 @@ async function panelFromStrip(strip, stripH, outPath) {
     .toFile(outPath);
 }
 
+function writeAlt(outDir, alt, panelCount) {
+  if (!alt) return;
+  if (panelCount <= 1) {
+    fs.writeFileSync(path.join(outDir, 'alt.txt'), alt + '\n');
+    return;
+  }
+  const lines = [`01: ${alt} Part 1 of ${panelCount}.`];
+  for (let i = 2; i <= panelCount; i++) {
+    lines.push(`${String(i).padStart(2, '0')}: Continuation of the same newspaper clipping, part ${i} of ${panelCount}.`);
+  }
+  fs.writeFileSync(path.join(outDir, 'alt.txt'), lines.join('\n') + '\n');
+}
+
 async function processClipping(mdPath) {
   const { data } = matter(fs.readFileSync(mdPath, 'utf8'));
   const slug = path.basename(mdPath, '.md');
@@ -98,6 +111,7 @@ async function processClipping(mdPath) {
 
   const meta = await sharp(imgPath).metadata();
   const scaledH = Math.round(meta.height * (CONTENT_W / meta.width));
+  let panelCount = 1;
 
   if (scaledH <= CONTENT_H) {
     const strip = await sharp(imgPath).resize({ width: CONTENT_W }).toBuffer();
@@ -128,11 +142,12 @@ async function processClipping(mdPath) {
       const name = String(i + 1).padStart(2, '0') + '.jpg';
       await panelFromStrip(strip, h, path.join(outDir, name));
     }
-    console.log(`${slug}: ${bounds.length - 1} panels`);
+    panelCount = bounds.length - 1;
+    console.log(`${slug}: ${panelCount} panels`);
   }
 
   fs.writeFileSync(path.join(outDir, 'caption.txt'), buildCaption(data) + '\n');
-  if (data.alt) fs.writeFileSync(path.join(outDir, 'alt.txt'), data.alt + '\n');
+  writeAlt(outDir, data.alt, panelCount);
 }
 
 let files = process.argv.slice(2);
