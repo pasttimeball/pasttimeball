@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "caption": "node scripts/caption.mjs",
+    "ig": "node scripts/ig.mjs",
     "find": "node scripts/find.mjs",
     "grab": "node scripts/grab.mjs"
   },

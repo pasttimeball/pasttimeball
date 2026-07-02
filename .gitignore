@@ -6,6 +6,9 @@ dist/
 # local master scans (large; back these up separately)
 archive/
 
+# instagram export panels (regenerate with npm run ig)
+ig/
+
 # OS noise
 Thumbs.db
 .DS_Store
