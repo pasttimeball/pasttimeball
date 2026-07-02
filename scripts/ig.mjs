@@ -132,6 +132,7 @@ async function processClipping(mdPath) {
   }
 
   fs.writeFileSync(path.join(outDir, 'caption.txt'), buildCaption(data) + '\n');
+  if (data.alt) fs.writeFileSync(path.join(outDir, 'alt.txt'), data.alt + '\n');
 }
 
 let files = process.argv.slice(2);
