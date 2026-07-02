@@ -8,6 +8,7 @@ source: "https://www.loc.gov/resource/sn84020274/1903-07-12/ed-1/?sp=22"
 image: "/images/clippings/mcginnity-iron-man.jpg"
 alt: "Full-page newspaper photograph of pitcher Joe McGinnity in a New York uniform waving his right arm overhead, headlined This Is the Famous Iron Man of McGraw's Team, credited to a Republic photographer."
 tags: ["stories", "photos"]
+posted: 2026-06-27
 blurb: "The Republic sent its own photographer to shoot Joe McGinnity, the pitching marvel of the National League, waving to St. Louis. The very next month the Iron Man pitched both ends of three doubleheaders and won all six."
 ---
 

@@ -106,8 +106,8 @@ newspaper: "${e.newspaper}"
 source: "${e.link}"
 image: "/images/clippings/your-scan.jpg"
 alt: "Describe the clipping for screen readers."
-tags: ["great-names"]
-name_rating: 4
+tags: ["stories"]
+posted: ${new Date().toISOString().slice(0, 10)}
 blurb: "A sentence or two of commentary."
 ---`);
 } else {

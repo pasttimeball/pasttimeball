@@ -7,6 +7,7 @@ source: "https://www.loc.gov/resource/sn85042344/1915-01-24/ed-1/?sp=11"
 image: "/images/clippings/allman-greatest-game-cartoon.jpg"
 alt: "Multi-panel newspaper cartoon by W. R. Allman showing highlights of a chaotic 1911 game: a flooded outfield, a fielder landing in a puddle, Harry Lord diving into the bench, Schaefer stealing first from second and Washington protesting the game."
 tags: ["stories", "cartoons"]
+posted: 2026-06-29
 blurb: "Hugh Fullerton named the greatest game he ever saw and cartoonist W. R. Allman drew the evidence: a flooded outfield, two fielders catching one fly, eleven players on the field and Germany Schaefer stealing first base from second."
 ---
 

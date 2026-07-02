@@ -17,7 +17,7 @@ A static Astro site that publishes scanned newspaper clippings of old baseball a
 ## Adding a new clipping
 
 1. Drop the scan in `public/images/clippings/`.
-2. Copy an existing file in `src/content/clippings/`, rename it and fill in the front matter (title, place, year, newspaper, source, image, alt and tags, plus team and blurb when they apply).
+2. Copy an existing file in `src/content/clippings/`, rename it and fill in the front matter (title, place, year, newspaper, source, image, alt, tags and posted, plus team and blurb when they apply). `posted` is the publish date shown on the post and drives the home page order and RSS; add `updated` if you revise one later.
 3. Run `npm run dev` to check it. Every page updates automatically.
 
 ## Structure

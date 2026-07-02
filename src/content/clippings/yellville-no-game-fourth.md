@@ -7,6 +7,7 @@ source: "https://www.loc.gov/resource/sn88051124/1905-06-30/ed-1/?sp=3"
 image: "/images/clippings/yellville-no-game-fourth.jpg"
 alt: "Short newspaper item reporting that the ball team at Walnut Ridge flunked on the local team too late to match a game with any other team, ending with Guess they got afeard."
 tags: ["stories", "town-teams"]
+posted: 2026-06-16
 blurb: "Walnut Ridge backed out of the Fourth of July game too late for Yellville to book anybody else, so the Mountain Echo printed the only explanation that made sense to them."
 ---
 

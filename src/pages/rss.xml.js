@@ -17,7 +17,7 @@ export async function GET(context) {
           : `From the pages of the ${c.data.newspaper}, ${c.data.place}, ${c.data.year}.`),
       link: `/clippings/${c.id}/`,
       categories: c.data.tags,
-      customData: `<pubDate>${new Date(Date.UTC(c.data.year, 5, 1)).toUTCString()}</pubDate>`,
+      pubDate: c.data.posted,
     })),
   });
 }

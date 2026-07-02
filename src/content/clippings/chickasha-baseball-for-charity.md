@@ -7,6 +7,7 @@ source: "https://www.loc.gov/resource/sn86090528/1909-08-05/ed-1/?sp=1"
 image: "/images/clippings/chickasha-baseball-for-charity.jpg"
 alt: "Front page story headlined Baseball for Charity Tomorrow Afternoon, describing a doubleheader for the hospital fund with a full lineup of the town's butchers against its grocers."
 tags: ["stories", "town-teams"]
+posted: 2026-06-30
 blurb: "Chickasha closed its stores for a charity doubleheader: butchers versus grocers at 3, Democrats versus Republicans at 5, every quarter to the hospital fund. The printed lineup includes two catchers and no pitcher."
 ---
 

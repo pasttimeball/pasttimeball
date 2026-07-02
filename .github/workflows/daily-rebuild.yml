@@ -1,0 +1,17 @@
+name: Daily rebuild
+
+# Rebuilds the site every morning so clippings with a future
+# posted date go live on schedule. Requires a NETLIFY_BUILD_HOOK
+# repository secret containing a Netlify build hook URL.
+
+on:
+  schedule:
+    - cron: "0 12 * * *" # 12:00 UTC, about 7 a.m. Central
+  workflow_dispatch:
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Netlify build
+        run: curl -s -X POST "${{ secrets.NETLIFY_BUILD_HOOK }}"

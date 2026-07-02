@@ -7,6 +7,7 @@ source: "https://www.loc.gov/resource/sn89051238/1906-03-28/ed-1/?sp=3"
 image: "/images/clippings/spalding-base-ball-guide-1906.jpg"
 alt: "Spalding's Encyclopedia of Base Ball advertisement with a drawing of a batter and catcher, listing numbered how-to booklets from How to Bat through How to Run the Bases, plus Spalding's Official Base Ball Guide for 1906."
 tags: ["ads"]
+posted: 2026-06-23
 blurb: "Spalding's mail-order library covered the entire game at a dime a booklet. Number 231 alone promised coaching, captaining, managing, umpiring and organizing a league, still for ten cents."
 ---
 

@@ -8,6 +8,7 @@ source: "https://www.loc.gov/resource/sn84020274/1902-08-05/ed-1/?sp=7"
 image: "/images/clippings/burkett-chases-bleacherite.jpg"
 alt: "Full-length newspaper portrait of Jesse Burkett holding a bat, headlined Burkett Chases a Bleacherite, with a caption explaining he chased a heckler who bolted out the Grand Avenue gate."
 tags: ["stories"]
+posted: 2026-06-25
 blurb: "A heckler got insulting during the game, so Browns left fielder Jesse Burkett climbed the fence after him. The Republic gave the chase a full-length portrait and the heckler two immortal nicknames."
 ---
 

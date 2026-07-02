@@ -7,6 +7,7 @@ source: "https://www.loc.gov/resource/sn88051124/1905-06-30/ed-1/?sp=3"
 image: "/images/clippings/yellville-boy-in-tree.jpg"
 alt: "Newspaper item about a boy with the financial acumen to climb a tree outside the ballpark to watch a base ball game and save his fifteen cents, ending with Don't interfere with him."
 tags: ["stories", "town-teams"]
+posted: 2026-06-19
 blurb: "A boy watched the ball game from a tree outside the fence and kept his fifteen cents. The Mountain Echo saluted his financial acumen and told the town to leave him alone."
 ---
 

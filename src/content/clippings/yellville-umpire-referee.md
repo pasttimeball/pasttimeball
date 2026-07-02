@@ -7,6 +7,7 @@ source: "https://www.loc.gov/resource/sn88051124/1905-06-30/ed-1/?sp=3"
 image: "/images/clippings/yellville-umpire-referee.jpg"
 alt: "Four-line newspaper item saying Ben Ward says it takes a good man to umpire a ball game and referee a fight at the same time, but that he did it last Tuesday."
 tags: ["stories", "town-teams"]
+posted: 2026-06-17
 blurb: "Small-town officiating in 1905: one man, two contests, no further questions. The Mountain Echo gave it four lines and moved on."
 ---
 

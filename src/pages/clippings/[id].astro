@@ -3,7 +3,7 @@ import type { GetStaticPaths } from 'astro';
 import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import ShareLinks from '../../components/ShareLinks.astro';
-import { allClippings, decadeOf, slugify, type Clipping } from '../../lib/clippings';
+import { allClippings, decadeOf, formatDate, slugify, type Clipping } from '../../lib/clippings';
 
 export const getStaticPaths = (async () => {
   const clippings = await allClippings();
@@ -24,7 +24,8 @@ interface Props {
 }
 
 const { clipping, prev, next } = Astro.props;
-const { title, team, place, year, newspaper, source, image, alt, tags, blurb } = clipping.data;
+const { title, team, place, year, newspaper, source, image, alt, tags, posted, updated, blurb } =
+  clipping.data;
 const { Content } = await render(clipping);
 const site = Astro.site ?? new URL('https://pasttimeball.com');
 const shareUrl = new URL(`/clippings/${clipping.id}/`, site);
@@ -58,6 +59,15 @@ const sourceIsLink = /^https?:\/\//.test(source);
         <tr><th scope="row">Place</th><td><a href={`/places/${slugify(place)}/`}>{place}</a></td></tr>
         <tr><th scope="row">Year</th><td><a href={`/decades/${decadeOf(year)}/`}>{year}</a></td></tr>
         <tr><th scope="row">Newspaper</th><td>{newspaper}</td></tr>
+        <tr>
+          <th scope="row">Posted</th>
+          <td>
+            <time datetime={posted.toISOString().slice(0, 10)}>{formatDate(posted)}</time>
+            {updated && (
+              <span class="clip-meta"> · updated <time datetime={updated.toISOString().slice(0, 10)}>{formatDate(updated)}</time></span>
+            )}
+          </td>
+        </tr>
         <tr>
           <th scope="row">Tags</th>
           <td>

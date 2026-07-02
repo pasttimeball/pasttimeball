@@ -8,6 +8,7 @@ source: "https://www.loc.gov/resource/sn89051213/1906-08-23/ed-1?sp=2"
 image: "/images/clippings/mena-carpenters-painters.jpg"
 alt: "Newspaper story headed Amusement Features describing a base ball game between the White Seals and a Poteau team, and a comic game between the town's carpenters and painters."
 tags: ["stories", "town-teams", "great-names"]
+posted: 2026-06-14
 blurb: "Mena threw itself a tenth birthday party with two ball games: a real one the White Seals won 11 to 10 and a comedy act between the carpenters and painters. The paper covered both with equal seriousness."
 ---
 

@@ -13,6 +13,9 @@ const clippings = defineCollection({
     image: z.string(),
     alt: z.string(),
     tags: z.array(z.string()),
+    posted: z.coerce.date(),
+    updated: z.coerce.date().optional(),
+    draft: z.boolean().default(false),
     blurb: z.string().optional(),
   }),
 });
