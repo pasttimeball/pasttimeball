@@ -1,0 +1,34 @@
+---
+import type { GetStaticPaths, Page } from 'astro';
+import Base from '../layouts/Base.astro';
+import ClippingCard from '../components/ClippingCard.astro';
+import { allClippings, type Clipping } from '../lib/clippings';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const clippings = await allClippings();
+  return paginate(clippings, { pageSize: 6 });
+}) satisfies GetStaticPaths;
+
+interface Props {
+  page: Page<Clipping>;
+}
+
+const { page } = Astro.props;
+---
+<Base
+  title="Past Time Ball"
+  description="Scanned newspaper clippings of old baseball and softball stories, ads and teams, with a soft spot for great historical team names."
+>
+  <p class="page-intro">
+    Fresh finds from the archives. Old ballgames, older ads and the best team names ever set in metal type.
+  </p>
+  <div class="card-grid">
+    {page.data.map((clipping) => <ClippingCard clipping={clipping} />)}
+  </div>
+  {(page.url.prev || page.url.next) && (
+    <nav class="pager" aria-label="Pagination">
+      {page.url.prev && <a href={page.url.prev}>&larr; Newer clippings</a>}
+      {page.url.next && <a class="next" href={page.url.next}>Older clippings &rarr;</a>}
+    </nav>
+  )}
+</Base>

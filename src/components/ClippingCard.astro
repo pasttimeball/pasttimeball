@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  clipping: CollectionEntry<'clippings'>;
+  headingLevel?: 'h2' | 'h3';
+}
+
+const { clipping, headingLevel = 'h2' } = Astro.props;
+const { title, team, newspaper, place, year, image, alt } = clipping.data;
+const url = `/clippings/${clipping.id}/`;
+const Heading = headingLevel;
+---
+<article class="clip-card">
+  <a href={url}><img src={image} alt={alt} loading="lazy" width="800" height="600" /></a>
+  <Heading><a href={url}>{title}</a></Heading>
+  <p class="clip-meta">
+    {team ? <span class="team">{team}</span> : <span>{newspaper}</span>}<br />{place} · {year}
+  </p>
+</article>

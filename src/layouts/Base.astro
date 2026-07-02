@@ -1,0 +1,61 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogType?: string;
+}
+
+const { title, description, ogImage, ogType = 'website' } = Astro.props;
+const site = Astro.site ?? new URL('https://pasttimeball.com');
+const canonical = new URL(Astro.url.pathname, site);
+const ogImageUrl = new URL(ogImage ?? '/images/og-default.svg', site);
+const fullTitle = title === 'Past Time Ball' ? title : `${title} | Past Time Ball`;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" type="application/rss+xml" title="Past Time Ball" href={new URL('/rss.xml', site)} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content="Past Time Ball" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" />
+  </head>
+  <body>
+    <header class="masthead">
+      <p class="dateline">All the old ball news that is fit to reprint</p>
+      <h1 class="title"><a href="/">Past Time Ball</a></h1>
+      <p class="tagline">Old baseball stories, ads and the occasional great team name</p>
+    </header>
+    <nav class="site-nav" aria-label="Site">
+      <a href="/">Latest</a>
+      <a href="/decades/">Decades</a>
+      <a href="/places/">Places</a>
+      <a href="/tags/">Tags</a>
+      <a href="/random/">Random</a>
+      <a href="/about/">About</a>
+    </nav>
+    <main class="wrap">
+      <slot />
+    </main>
+    <footer class="colophon wrap">
+      <p>
+        Past Time Ball reprints public domain newspaper clippings with citations to the originals.
+        <a href="/about/">Read the sourcing statement</a> or grab the <a href="/rss.xml">RSS feed</a>.
+      </p>
+    </footer>
+  </body>
+</html>

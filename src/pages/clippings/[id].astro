@@ -1,0 +1,77 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import ShareLinks from '../../components/ShareLinks.astro';
+import { allClippings, decadeOf, slugify, type Clipping } from '../../lib/clippings';
+
+export const getStaticPaths = (async () => {
+  const clippings = await allClippings();
+  return clippings.map((clipping, i) => ({
+    params: { id: clipping.id },
+    props: {
+      clipping,
+      prev: clippings[i - 1] ?? null,
+      next: clippings[i + 1] ?? null,
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  clipping: Clipping;
+  prev: Clipping | null;
+  next: Clipping | null;
+}
+
+const { clipping, prev, next } = Astro.props;
+const { title, team, place, year, newspaper, source, image, alt, tags, blurb } = clipping.data;
+const { Content } = await render(clipping);
+const site = Astro.site ?? new URL('https://pasttimeball.com');
+const shareUrl = new URL(`/clippings/${clipping.id}/`, site);
+const shareImage = new URL(image, site);
+const description =
+  blurb ??
+  (team
+    ? `The ${team} of ${place}, as reported by the ${newspaper} in ${year}.`
+    : `From the pages of the ${newspaper}, ${place}, ${year}.`);
+const sourceIsLink = /^https?:\/\//.test(source);
+---
+<Base title={title} description={description} ogImage={image} ogType="article">
+  <article class="clipping-full prose">
+    <p class="clip-meta" style="text-align:center;">
+      {team ? <span class="team">{team}</span> : <span>{newspaper}</span>} · {place} · {year}
+    </p>
+    <h1 style="text-align:center;">{title}</h1>
+    <figure>
+      <img src={image} alt={alt} width="800" height="600" />
+    </figure>
+    <div class="source-box">
+      <strong>Source</strong><br />
+      {newspaper}, {year}.
+      {sourceIsLink ? <a href={source}>View the original</a> : source}
+    </div>
+    {blurb && <p class="page-intro" style="text-align:left;">{blurb}</p>}
+    <Content />
+    <table class="meta-table">
+      <tbody>
+        {team && <tr><th scope="row">Team</th><td>{team}</td></tr>}
+        <tr><th scope="row">Place</th><td><a href={`/places/${slugify(place)}/`}>{place}</a></td></tr>
+        <tr><th scope="row">Year</th><td><a href={`/decades/${decadeOf(year)}/`}>{year}</a></td></tr>
+        <tr><th scope="row">Newspaper</th><td>{newspaper}</td></tr>
+        <tr>
+          <th scope="row">Tags</th>
+          <td>
+            <ul class="tag-list">
+              {tags.map((tag) => <li><a href={`/tags/${tag}/`}>{tag}</a></li>)}
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ShareLinks title={title} url={shareUrl} image={shareImage} />
+    <nav class="pager" aria-label="More clippings">
+      {prev && <a href={`/clippings/${prev.id}/`}>&larr; {prev.data.team ?? prev.data.title}</a>}
+      {next && <a class="next" href={`/clippings/${next.id}/`}>{next.data.team ?? next.data.title} &rarr;</a>}
+    </nav>
+  </article>
+</Base>

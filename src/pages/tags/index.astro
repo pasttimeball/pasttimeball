@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import { allClippings } from '../../lib/clippings';
+
+const clippings = await allClippings();
+const counts = new Map<string, number>();
+for (const c of clippings) {
+  for (const tag of c.data.tags) {
+    counts.set(tag, (counts.get(tag) ?? 0) + 1);
+  }
+}
+const tags = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+---
+<Base
+  title="Browse by tag"
+  description="Old baseball and softball clippings sorted by kind: stories, ads, cartoons, town teams and more."
+>
+  <h1 style="text-align:center;">Browse by Tag</h1>
+  <p class="page-intro">Stories, ads, cartoons and the rest. Pick a lane.</p>
+  <ul class="index-list">
+    {tags.map(([tag, count]) => (
+      <li>
+        <a href={`/tags/${tag}/`}>{tag}</a>
+        <span class="count"> · {count} {count === 1 ? 'clipping' : 'clippings'}</span>
+      </li>
+    ))}
+  </ul>
+</Base>

@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  url: URL;
+  image: URL;
+}
+
+const { title, url, image } = Astro.props;
+const link = encodeURIComponent(url.toString());
+const text = encodeURIComponent(title);
+const media = encodeURIComponent(image.toString());
+---
+<div class="share-row">
+  <span class="share-label">Pass it along</span>
+  <ul class="tag-list">
+    <li><a href={`https://bsky.app/intent/compose?text=${text}%20${link}`} target="_blank" rel="noopener">Bluesky</a></li>
+    <li><a href={`https://twitter.com/intent/tweet?text=${text}&url=${link}`} target="_blank" rel="noopener">X</a></li>
+    <li><a href={`https://www.facebook.com/sharer/sharer.php?u=${link}`} target="_blank" rel="noopener">Facebook</a></li>
+    <li><a href={`https://pinterest.com/pin/create/button/?url=${link}&media=${media}&description=${text}`} target="_blank" rel="noopener">Pinterest</a></li>
+    <li><a href={`mailto:?subject=${text}&body=${link}`}>Email</a></li>
+    <li><button type="button" class="copy-link" data-url={url.toString()}>Copy link</button></li>
+  </ul>
+</div>
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.copy-link').forEach((button) => {
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(button.dataset.url ?? '');
+        button.textContent = 'Copied!';
+      } catch {
+        button.textContent = button.dataset.url ?? '';
+      }
+      setTimeout(() => (button.textContent = 'Copy link'), 2000);
+    });
+  });
+</script>

@@ -1,0 +1,40 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import ClippingCard from '../../components/ClippingCard.astro';
+import { allClippings, type Clipping } from '../../lib/clippings';
+
+export const getStaticPaths = (async () => {
+  const clippings = await allClippings();
+  const byTag = new Map<string, Clipping[]>();
+  for (const c of clippings) {
+    for (const tag of c.data.tags) {
+      byTag.set(tag, [...(byTag.get(tag) ?? []), c]);
+    }
+  }
+  return [...byTag.entries()].map(([tag, entries]) => ({
+    params: { tag },
+    props: { entries },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  entries: Clipping[];
+}
+
+const { tag } = Astro.params;
+const { entries } = Astro.props;
+---
+<Base
+  title={`Tagged: ${tag}`}
+  description={`Old baseball and softball clippings tagged ${tag}.`}
+>
+  <h1 style="text-align:center;">Tagged: {tag}</h1>
+  <p class="page-intro">{entries.length} {entries.length === 1 ? 'clipping' : 'clippings'} tagged {tag}.</p>
+  <div class="card-grid">
+    {entries.map((clipping) => <ClippingCard clipping={clipping} />)}
+  </div>
+  <nav class="pager" aria-label="Index">
+    <a href="/tags/">&larr; All tags</a>
+  </nav>
+</Base>

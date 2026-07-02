@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import { allClippings, stateOf, slugify } from '../../lib/clippings';
+
+const clippings = await allClippings();
+const byState = new Map<string, Map<string, number>>();
+for (const c of clippings) {
+  const state = stateOf(c.data.place);
+  const places = byState.get(state) ?? new Map<string, number>();
+  places.set(c.data.place, (places.get(c.data.place) ?? 0) + 1);
+  byState.set(state, places);
+}
+const states = [...byState.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+---
+<Base
+  title="Browse by place"
+  description="Old baseball and softball clippings sorted by hometown, grouped state by state."
+>
+  <h1 style="text-align:center;">Browse by Place</h1>
+  <p class="page-intro">Every team came from somewhere. Find yours.</p>
+  {states.map(([state, places]) => (
+    <section class="state-group">
+      <h2>{state}</h2>
+      <ul class="index-list">
+        {[...places.entries()].sort((a, b) => a[0].localeCompare(b[0])).map(([place, count]) => (
+          <li>
+            <a href={`/places/${slugify(place)}/`}>{place.split(',')[0].trim()}</a>
+            <span class="count"> · {count} {count === 1 ? 'clipping' : 'clippings'}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Base>

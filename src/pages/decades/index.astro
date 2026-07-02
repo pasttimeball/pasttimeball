@@ -1,0 +1,27 @@
+---
+import Base from '../../layouts/Base.astro';
+import { allClippings, decadeOf } from '../../lib/clippings';
+
+const clippings = await allClippings();
+const counts = new Map<string, number>();
+for (const c of clippings) {
+  const d = decadeOf(c.data.year);
+  counts.set(d, (counts.get(d) ?? 0) + 1);
+}
+const decades = [...counts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+---
+<Base
+  title="Browse by decade"
+  description="Old baseball and softball clippings sorted by decade, from town teams to the low minors."
+>
+  <h1 style="text-align:center;">Browse by Decade</h1>
+  <p class="page-intro">Pick an era and see what the sports page was shouting about.</p>
+  <ul class="index-list">
+    {decades.map(([decade, count]) => (
+      <li>
+        <a href={`/decades/${decade}/`}>The {decade}</a>
+        <span class="count"> · {count} {count === 1 ? 'clipping' : 'clippings'}</span>
+      </li>
+    ))}
+  </ul>
+</Base>

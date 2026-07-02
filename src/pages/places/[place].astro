@@ -1,0 +1,42 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import ClippingCard from '../../components/ClippingCard.astro';
+import { allClippings, slugify, type Clipping } from '../../lib/clippings';
+
+export const getStaticPaths = (async () => {
+  const clippings = await allClippings();
+  const byPlace = new Map<string, { place: string; entries: Clipping[] }>();
+  for (const c of clippings) {
+    const slug = slugify(c.data.place);
+    const group = byPlace.get(slug) ?? { place: c.data.place, entries: [] };
+    group.entries.push(c);
+    byPlace.set(slug, group);
+  }
+  return [...byPlace.entries()].map(([slug, group]) => ({
+    params: { place: slug },
+    props: group,
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  place: string;
+  entries: Clipping[];
+}
+
+const { place, entries } = Astro.props;
+const sorted = entries.sort((a, b) => a.data.year - b.data.year);
+---
+<Base
+  title={place}
+  description={`Baseball and softball clippings from ${place}: old teams, old papers and great names.`}
+>
+  <h1 style="text-align:center;">{place}</h1>
+  <p class="page-intro">{sorted.length} {sorted.length === 1 ? 'clipping' : 'clippings'} from {place}.</p>
+  <div class="card-grid">
+    {sorted.map((clipping) => <ClippingCard clipping={clipping} />)}
+  </div>
+  <nav class="pager" aria-label="Index">
+    <a href="/places/">&larr; All places</a>
+  </nav>
+</Base>

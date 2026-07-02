@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import { allClippings } from '../lib/clippings';
+
+const urls = (await allClippings()).map((c) => `/clippings/${c.id}/`);
+---
+<Base
+  title="Random clipping"
+  description="Spin the microfilm reel and land on a random clipping."
+>
+  <p class="page-intro" id="spinner">Spinning the microfilm reel...</p>
+  <noscript>
+    <p class="page-intro">
+      This page needs JavaScript to pick for you. No worries, here they all are:
+    </p>
+    <ul class="index-list">
+      {urls.map((url) => <li><a href={url}>{url}</a></li>)}
+    </ul>
+  </noscript>
+  <script define:vars={{ urls }}>
+    const pick = urls[Math.floor(Math.random() * urls.length)];
+    if (pick) window.location.replace(pick);
+  </script>
+</Base>

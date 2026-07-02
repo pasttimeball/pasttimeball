@@ -1,0 +1,40 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import ClippingCard from '../../components/ClippingCard.astro';
+import { allClippings, decadeOf, type Clipping } from '../../lib/clippings';
+
+export const getStaticPaths = (async () => {
+  const clippings = await allClippings();
+  const byDecade = new Map<string, Clipping[]>();
+  for (const c of clippings) {
+    const d = decadeOf(c.data.year);
+    byDecade.set(d, [...(byDecade.get(d) ?? []), c]);
+  }
+  return [...byDecade.entries()].map(([decade, entries]) => ({
+    params: { decade },
+    props: { entries },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  entries: Clipping[];
+}
+
+const { decade } = Astro.params;
+const { entries } = Astro.props;
+const sorted = entries.sort((a, b) => a.data.year - b.data.year);
+---
+<Base
+  title={`The ${decade}`}
+  description={`Baseball and softball clippings from the ${decade}: old teams, old papers and great names.`}
+>
+  <h1 style="text-align:center;">The {decade}</h1>
+  <p class="page-intro">{sorted.length} {sorted.length === 1 ? 'clipping' : 'clippings'} from the {decade}.</p>
+  <div class="card-grid">
+    {sorted.map((clipping) => <ClippingCard clipping={clipping} />)}
+  </div>
+  <nav class="pager" aria-label="Index">
+    <a href="/decades/">&larr; All decades</a>
+  </nav>
+</Base>
