@@ -8,7 +8,7 @@ source: "https://www.loc.gov/resource/sn90061417/1889-08-09/ed-1/?sp=1"
 image: "/images/clippings/azureines-vs-monarchs.jpg"
 alt: "Front page announcement reading Base Ball! Oregon Azureines vs. St. Joe Monarchs, Base Ball Park, Oregon, Mo., Saturday, August 10, 1889, promising an interesting game and admission of 10 and 5 cents."
 tags: ["ads", "town-teams", "great-names"]
-posted: 2026-07-25
+posted: 2026-07-03
 blurb: "The Holt County Sentinel put it on the front page in August 1889: the Oregon Azureines against the St. Joe Monarchs, the best amateur club in St. Joseph, at Base Ball Park. Admission 10 and 5 cents."
 ---
 
