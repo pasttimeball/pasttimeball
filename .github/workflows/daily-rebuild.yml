@@ -1,8 +1,10 @@
 name: Daily rebuild
 
-# Rebuilds the site every morning so clippings with a future
-# posted date go live on schedule. Requires a NETLIFY_BUILD_HOOK
-# repository secret containing a Netlify build hook URL.
+# Rebuilds the site in the morning so clippings with a future
+# posted date go live on schedule. Skips the rebuild entirely on
+# days when no clipping is due, to save Netlify build credits.
+# Requires a NETLIFY_BUILD_HOOK repository secret containing a
+# Netlify build hook URL.
 
 on:
   schedule:
@@ -13,5 +15,13 @@ jobs:
   rebuild:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Netlify build
-        run: curl -s -X POST "${{ secrets.NETLIFY_BUILD_HOOK }}"
+      - uses: actions/checkout@v4
+      - name: Trigger Netlify build if a clipping goes live today
+        run: |
+          TODAY=$(date -u +%F)
+          if grep -rl "posted: ${TODAY}" src/content/clippings/ --include='*.md'; then
+            echo "Clipping due ${TODAY}; triggering rebuild."
+            curl -s -X POST "${{ secrets.NETLIFY_BUILD_HOOK }}"
+          else
+            echo "No clipping due ${TODAY}; skipping rebuild."
+          fi
