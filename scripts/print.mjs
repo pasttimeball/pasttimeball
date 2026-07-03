@@ -28,6 +28,7 @@ function parseArgs(argv) {
     const arg = argv[i];
     if (arg === '--photo') args.photo = true;
     else if (arg === '--landscape') args.landscape = true;
+    else if (arg === '--keyline') args.keyline = true;
     else if (arg === '--trim') args.trim = argv[++i].split(',').map(Number);
     else if (!args.slug) args.slug = arg.replace(/\.md$/, '').split(/[\\/]/).pop();
   }
@@ -87,13 +88,19 @@ for (const base of SIZES) {
   const resized = await sharp(cleaned).resize({ width: clipW, kernel: 'lanczos3' }).toBuffer();
 
   const clipTop = Math.round(size.height * (args.landscape ? 0.14 : 0.2333));
+  const clipLeft = Math.round((size.width - clipW) / 2);
   const citeY = clipTop + clipH + Math.round(160 * f);
+  const inset = Math.round(14 * f);
+  const keyline = args.keyline
+    ? `<rect x="${clipLeft - inset}" y="${clipTop - inset}" width="${clipW + inset * 2}" height="${clipH + inset * 2}" fill="none" stroke="#b8b5ab" stroke-width="${Math.max(2, Math.round(2 * f))}"/>`
+    : '';
   const svg = Buffer.from(`<svg width="${size.width}" height="${size.height}" xmlns="http://www.w3.org/2000/svg">
+    ${keyline}
     <text x="${size.width / 2}" y="${citeY}" text-anchor="middle" font-family="Georgia, serif" font-size="${Math.round(44 * f)}" letter-spacing="${Math.round(10 * f)}" fill="#4a4a45">${citation}</text>
     <line x1="${size.width / 2 - 150 * f}" y1="${citeY + Math.round(55 * f)}" x2="${size.width / 2 + 150 * f}" y2="${citeY + Math.round(55 * f)}" stroke="#b5b2a8" stroke-width="2"/>
   </svg>`);
 
-  const outPath = path.join(outDir, `${args.slug}-${size.name}.png`);
+  const outPath = path.join(outDir, `${args.slug}-${size.name}${args.keyline ? '-keyline' : ''}.png`);
   await sharp({ create: { width: size.width, height: size.height, channels: 3, background: '#fdfdfb' } })
     .composite([
       { input: resized, top: clipTop, left: Math.round((size.width - clipW) / 2) },
