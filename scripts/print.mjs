@@ -23,10 +23,11 @@ const SIZES = [
 const MONTHS = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
 
 function parseArgs(argv) {
-  const args = { photo: false };
+  const args = { photo: false, landscape: false };
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     if (arg === '--photo') args.photo = true;
+    else if (arg === '--landscape') args.landscape = true;
     else if (arg === '--trim') args.trim = argv[++i].split(',').map(Number);
     else if (!args.slug) args.slug = arg.replace(/\.md$/, '').split(/[\\/]/).pop();
   }
@@ -73,16 +74,19 @@ const cleanedMeta = await sharp(cleaned).metadata();
 const outDir = path.join('prints', args.slug);
 fs.mkdirSync(outDir, { recursive: true });
 
-for (const size of SIZES) {
+for (const base of SIZES) {
+  const size = args.landscape
+    ? { name: base.name + '-landscape', width: base.height, height: base.width }
+    : base;
   const f = size.width / 2400;
-  const maxW = Math.round(size.width * 0.8125);
-  const maxH = Math.round(size.height * 0.5);
+  const maxW = Math.round(size.width * (args.landscape ? 0.78 : 0.8125));
+  const maxH = Math.round(size.height * (args.landscape ? 0.62 : 0.5));
   const scale = Math.min(maxW / cleanedMeta.width, maxH / cleanedMeta.height);
   const clipW = Math.round(cleanedMeta.width * scale);
   const clipH = Math.round(cleanedMeta.height * scale);
   const resized = await sharp(cleaned).resize({ width: clipW, kernel: 'lanczos3' }).toBuffer();
 
-  const clipTop = Math.round(size.height * 0.2333);
+  const clipTop = Math.round(size.height * (args.landscape ? 0.14 : 0.2333));
   const citeY = clipTop + clipH + Math.round(160 * f);
   const svg = Buffer.from(`<svg width="${size.width}" height="${size.height}" xmlns="http://www.w3.org/2000/svg">
     <text x="${size.width / 2}" y="${citeY}" text-anchor="middle" font-family="Georgia, serif" font-size="${Math.round(44 * f)}" letter-spacing="${Math.round(10 * f)}" fill="#4a4a45">${citation}</text>
