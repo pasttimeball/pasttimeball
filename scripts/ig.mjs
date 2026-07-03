@@ -70,6 +70,10 @@ function bestCut(means, target, lastCut) {
 }
 
 async function panelFromStrip(strip, stripH, outPath) {
+  if (stripH > CONTENT_H) {
+    strip = await sharp(strip).resize({ height: CONTENT_H }).toBuffer();
+    stripH = CONTENT_H;
+  }
   const { width: stripW } = await sharp(strip).metadata();
   await sharp({
     create: { width: CANVAS_W, height: CANVAS_H, channels: 3, background: PAPER },
@@ -127,10 +131,13 @@ async function processClipping(mdPath) {
     const raw = await sharp(column).grayscale().raw().toBuffer();
     const means = rowMeans(raw, CONTENT_W, scaledH);
 
+    // Spread cuts evenly so the final panel is never a near-blank sliver.
+    const nPanels = Math.ceil(scaledH / CONTENT_H);
+    const step = scaledH / nPanels;
     const cuts = [];
     let cursor = 0;
-    while (scaledH - cursor > CONTENT_H) {
-      const cut = bestCut(means, cursor + CONTENT_H, cursor);
+    for (let i = 1; i < nPanels; i++) {
+      const cut = bestCut(means, Math.round(step * i), cursor);
       cuts.push(cut);
       cursor = cut;
     }
