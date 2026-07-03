@@ -82,12 +82,17 @@ for (const base of SIZES) {
   const f = size.width / 2400;
   const maxW = Math.round(size.width * (args.landscape ? 0.78 : 0.8125));
   const maxH = Math.round(size.height * (args.landscape ? 0.62 : 0.5));
-  const scale = Math.min(maxW / cleanedMeta.width, maxH / cleanedMeta.height);
+  // Cap upscaling so small clippings stay sharp; they sit smaller on the
+  // sheet with more air instead of blowing up soft.
+  const scale = Math.min(maxW / cleanedMeta.width, maxH / cleanedMeta.height, 2.2);
   const clipW = Math.round(cleanedMeta.width * scale);
   const clipH = Math.round(cleanedMeta.height * scale);
   const resized = await sharp(cleaned).resize({ width: clipW, kernel: 'lanczos3' }).toBuffer();
 
-  const clipTop = Math.round(size.height * (args.landscape ? 0.14 : 0.2333));
+  // Small clippings drift to the optical center instead of hugging the top.
+  const blockH = clipH + Math.round(215 * f);
+  const defaultTop = Math.round(size.height * (args.landscape ? 0.14 : 0.2333));
+  const clipTop = Math.max(defaultTop, Math.round((size.height - blockH) * 0.44));
   const clipLeft = Math.round((size.width - clipW) / 2);
   const citeY = clipTop + clipH + Math.round(160 * f);
   const inset = Math.round(14 * f);
