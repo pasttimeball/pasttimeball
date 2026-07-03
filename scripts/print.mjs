@@ -109,7 +109,9 @@ for (const base of SIZES) {
   </svg>`);
 
   const outPath = path.join(outDir, `${args.slug}-${size.name}${args.keyline ? '-keyline' : ''}.png`);
-  await sharp({ create: { width: size.width, height: size.height, channels: 3, background: '#fdfdfb' } })
+  // Pure white: printers lay down no ink for white, so the background is
+  // whatever paper the buyer prints on. No tint, no seams.
+  await sharp({ create: { width: size.width, height: size.height, channels: 3, background: '#ffffff' } })
     .composite([
       { input: resized, top: clipTop, left: Math.round((size.width - clipW) / 2) },
       { input: svg, top: 0, left: 0 },
@@ -119,6 +121,17 @@ for (const base of SIZES) {
     .toFile(outPath);
   console.log(`${outPath}  (${size.width}x${size.height} @ 300dpi, clipping ${clipW}x${clipH})`);
 }
+
+// Bonus ink-only file: the clipping with all paper knocked out to true
+// transparency. Ink density becomes alpha, so it prints or overlays onto
+// any surface. Crafters use these for Cricut, mugs and toned papers.
+const alpha = await sharp(cleaned).greyscale().negate().toBuffer();
+const transparentPath = path.join(outDir, `${args.slug}-ink-only-transparent.png`);
+await sharp({ create: { width: cleanedMeta.width, height: cleanedMeta.height, channels: 3, background: '#000000' } })
+  .joinChannel(alpha)
+  .png()
+  .toFile(transparentPath);
+console.log(transparentPath);
 
 // License card that ships inside the download bundle.
 const aboutPath = path.join(outDir, 'ABOUT-THIS-CLIPPING.txt');
