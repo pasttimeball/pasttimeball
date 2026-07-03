@@ -87,7 +87,6 @@ for (const size of SIZES) {
   const svg = Buffer.from(`<svg width="${size.width}" height="${size.height}" xmlns="http://www.w3.org/2000/svg">
     <text x="${size.width / 2}" y="${citeY}" text-anchor="middle" font-family="Georgia, serif" font-size="${Math.round(44 * f)}" letter-spacing="${Math.round(10 * f)}" fill="#4a4a45">${citation}</text>
     <line x1="${size.width / 2 - 150 * f}" y1="${citeY + Math.round(55 * f)}" x2="${size.width / 2 + 150 * f}" y2="${citeY + Math.round(55 * f)}" stroke="#b5b2a8" stroke-width="2"/>
-    <text x="${size.width / 2}" y="${Math.round(size.height * 0.953)}" text-anchor="middle" font-family="Georgia, serif" font-size="${Math.round(26 * f)}" letter-spacing="${Math.round(6 * f)}" fill="#a09d93">PASTTIMEBALL.COM</text>
   </svg>`);
 
   const outPath = path.join(outDir, `${args.slug}-${size.name}.png`);
