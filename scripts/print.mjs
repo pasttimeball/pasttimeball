@@ -14,9 +14,12 @@ import path from 'node:path';
 import matter from 'gray-matter';
 import sharp from 'sharp';
 
+// Five sizes = one full Etsy digital listing (max five files).
 const SIZES = [
   { name: '5x7', width: 1500, height: 2100 },
+  { name: 'a5', width: 1748, height: 2480 },
   { name: '8x10', width: 2400, height: 3000 },
+  { name: 'a4', width: 2480, height: 3508 },
   { name: '11x14', width: 3300, height: 4200 },
 ];
 
@@ -117,5 +120,34 @@ for (const base of SIZES) {
   console.log(`${outPath}  (${size.width}x${size.height} @ 300dpi, clipping ${clipW}x${clipH})`);
 }
 
+// License card that ships inside the download bundle.
+const aboutPath = path.join(outDir, 'ABOUT-THIS-CLIPPING.txt');
+fs.writeFileSync(
+  aboutPath,
+  `${data.title}
+
+Reprinted from the ${data.newspaper}, ${dateText.charAt(0) + dateText.slice(1).toLowerCase()}.
+
+${data.blurb ?? ''}
+
+WHAT YOU HAVE
+Five print-ready files at 300 DPI: 5x7, 8x10 and 11x14 inches plus A5 and A4.
+High-contrast black and white. Prints beautifully at home, at a photo counter
+or through any print shop. Plain matte paper suits it best.
+
+LICENSE
+For personal use. Print as many copies as you like for your own walls and
+your gifts. Please do not resell these files or prints made from them.
+
+THE SOURCE
+This clipping is drawn from a public domain newspaper digitized by the
+Library of Congress. The original page lives here:
+${data.source}
+
+Found, cleaned and mounted by the Bleacherite.
+pasttimeball.com
+`
+);
+console.log(`${aboutPath}`);
 console.log(`\nCitation: ${citation}`);
 console.log('Order a physical proof before listing. Screens flatter contrast.');
