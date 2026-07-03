@@ -10,7 +10,8 @@
     "caption": "node scripts/caption.mjs",
     "ig": "node scripts/ig.mjs",
     "find": "node scripts/find.mjs",
-    "grab": "node scripts/grab.mjs"
+    "grab": "node scripts/grab.mjs",
+    "print": "node scripts/print.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.11",
