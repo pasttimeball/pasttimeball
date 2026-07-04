@@ -141,34 +141,6 @@ await sharp({ create: { width: cleanedMeta.width, height: cleanedMeta.height, ch
   .toFile(transparentPath);
 console.log(transparentPath);
 
-// License card that ships inside the download bundle.
-const aboutPath = path.join(outDir, 'ABOUT-THIS-CLIPPING.txt');
-fs.writeFileSync(
-  aboutPath,
-  `${data.title}
-
-Reprinted from the ${data.newspaper}, ${dateText.charAt(0) + dateText.slice(1).toLowerCase()}.
-
-${data.blurb ?? ''}
-
-WHAT YOU HAVE
-Five print-ready files at 300 DPI: 5x7, 8x10 and 11x14 inches plus A5 and A4.
-High-contrast black and white. Prints beautifully at home, at a photo counter
-or through any print shop. Plain matte paper suits it best.
-
-LICENSE
-For personal use. Print as many copies as you like for your own walls and
-your gifts. Please do not resell these files or prints made from them.
-
-THE SOURCE
-This clipping is drawn from a public domain newspaper digitized by the
-Library of Congress. The original page lives here:
-${data.source}
-
-Found, cleaned and mounted by the Bleacherite.
-pasttimeball.com
-`
-);
-console.log(`${aboutPath}`);
 console.log(`\nCitation: ${citation}`);
+console.log('License card: npm run about -- ' + args.slug + '  (ABOUT-THIS-CLIPPING.pdf)');
 console.log('Order a physical proof before listing. Screens flatter contrast.');

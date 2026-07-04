@@ -12,11 +12,13 @@
     "find": "node scripts/find.mjs",
     "grab": "node scripts/grab.mjs",
     "print": "node scripts/print.mjs",
+    "about": "node scripts/about.mjs",
     "mockup": "node scripts/mockup.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.11",
     "astro": "^5.7.0",
-    "gray-matter": "^4.0.3"
+    "gray-matter": "^4.0.3",
+    "pdfkit": "^0.19.1"
   }
 }
