@@ -32,6 +32,7 @@ function parseArgs(argv) {
     if (arg === '--photo') args.photo = true;
     else if (arg === '--landscape') args.landscape = true;
     else if (arg === '--keyline') args.keyline = true;
+    else if (arg === '--rotate') args.rotate = parseFloat(argv[++i]);
     else if (arg === '--trim') args.trim = argv[++i].split(',').map(Number);
     else if (!args.slug) args.slug = arg.replace(/\.md$/, '').split(/[\\/]/).pop();
   }
@@ -66,6 +67,10 @@ const citation = `${data.newspaper.toUpperCase()} · ${dateText}`;
 
 // Cleanup pass. Text clippings get strong levels; halftone photos gentler.
 let clip = sharp(imagePath).greyscale();
+if (args.rotate) {
+  // Deskew crooked scans; positive degrees pull the right side down.
+  clip = sharp(await clip.rotate(args.rotate, { background: '#ffffff' }).toBuffer());
+}
 const meta0 = await clip.metadata();
 if (args.trim) {
   const [l, t, r, b] = args.trim;
