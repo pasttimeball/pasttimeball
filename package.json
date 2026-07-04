@@ -13,7 +13,8 @@
     "grab": "node scripts/grab.mjs",
     "print": "node scripts/print.mjs",
     "about": "node scripts/about.mjs",
-    "mockup": "node scripts/mockup.mjs"
+    "mockup": "node scripts/mockup.mjs",
+    "shopimages": "node scripts/shopimages.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.11",
