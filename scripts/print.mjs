@@ -33,6 +33,7 @@ function parseArgs(argv) {
     else if (arg === '--landscape') args.landscape = true;
     else if (arg === '--keyline') args.keyline = true;
     else if (arg === '--rotate') args.rotate = parseFloat(argv[++i]);
+    else if (arg === '--image') args.image = argv[++i];
     else if (arg === '--trim') args.trim = argv[++i].split(',').map(Number);
     else if (!args.slug) args.slug = arg.replace(/\.md$/, '').split(/[\\/]/).pop();
   }
@@ -51,7 +52,9 @@ if (!fs.existsSync(mdPath)) {
   process.exit(1);
 }
 const { data } = matter(fs.readFileSync(mdPath, 'utf8'));
-const imagePath = path.join('public', data.image.replace(/^\//, ''));
+// --image points at a print-only variant (touch-ups that should not change
+// the clipping as shown on the site).
+const imagePath = args.image ?? path.join('public', data.image.replace(/^\//, ''));
 if (!fs.existsSync(imagePath)) {
   console.error(`Clipping image not found at ${imagePath}`);
   process.exit(1);
