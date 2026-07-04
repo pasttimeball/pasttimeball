@@ -22,7 +22,14 @@ if (!fs.existsSync(mdPath)) {
   process.exit(1);
 }
 const { data } = matter(fs.readFileSync(mdPath, 'utf8'));
-const imagePath = path.join('public', data.image.replace(/^\//, ''));
+
+// Prefer the print-only touched-up source (added borders, deskew) when one
+// exists, so the card shows the same art the buyer's sheets carry.
+let imagePath = path.join('public', data.image.replace(/^\//, ''));
+for (const v of ['source-straightened.png', 'source-bordered.png', 'source-deskewed.png']) {
+  const p = path.join('prints', slug, v);
+  if (fs.existsSync(p)) { imagePath = p; break; }
+}
 
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 let dateText = String(data.year);
@@ -105,18 +112,20 @@ section('FOR PERSONAL USE',
   'Print as many copies as you like for your own walls and your gifts. ' +
   'Please do not resell these files or prints made from them.');
 
-section('THE SOURCE',
-  'Drawn from a public domain newspaper digitized by the Library of Congress. The original page lives here:',
-  { tight: true });
-doc.font(F.reg).fontSize(8.5).fillColor(GREEN)
-  .text(String(data.source), M + 22, y, { width: W - (M + 22) * 2, link: String(data.source), underline: false });
+doc.font(F.reg).fontSize(9).fillColor(GREEN).text('THE SOURCE', M + 22, y, { characterSpacing: 3 });
+y = doc.y + 5;
+doc.font(F.reg).fontSize(9.5).fillColor(INK)
+  .text('Drawn from a public domain newspaper digitized by the Library of Congress. The original page lives here: ',
+    M + 22, y, { width: W - (M + 22) * 2, lineGap: 3, continued: true })
+  .fillColor(GREEN)
+  .text(String(data.source), { link: String(data.source) });
 y = doc.y;
 
-// Footer pinned to the bottom of the page
-const fy = H - 92;
+// Footer pinned near the bottom, but never colliding with long content
+const fy = Math.min(Math.max(H - 92, y + 18), 724);
 hairline(fy);
 doc.font(F.ital).fontSize(10).fillColor(GRAY)
-  .text('Found, cleaned and mounted by the Bleacherite.', M, fy + 14, { width: W - M * 2, align: 'center' });
+  .text('Found and cleaned by the Bleacherite.', M, fy + 14, { width: W - M * 2, align: 'center' });
 doc.font(F.reg).fontSize(9).fillColor(GREEN)
   .text('pasttimeball.com', M, fy + 32, { width: W - M * 2, align: 'center', characterSpacing: 2, link: 'https://pasttimeball.com' });
 
