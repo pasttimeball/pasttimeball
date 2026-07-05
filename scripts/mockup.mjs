@@ -107,8 +107,8 @@ async function sizeGuide() {
     <text x="${CANVAS_W / 2}" y="195" text-anchor="middle" font-family="Georgia, serif" font-size="32" letter-spacing="6" fill="#8b887e">300 DPI · INSTANT DOWNLOAD · PRINT AT HOME OR ANY PHOTO LAB</text>
     ${rects}
   </svg>`);
-  await sharp(svg).jpeg({ quality: 90 }).toFile(path.join(outDir, 'mockup-size-guide.jpg'));
-  console.log(path.join(outDir, 'mockup-size-guide.jpg'));
+  await sharp(svg).jpeg({ quality: 90 }).toFile(path.join(outDir, '04-mockup-size-guide.jpg'));
+  console.log(path.join(outDir, '04-mockup-size-guide.jpg'));
 }
 
 // Cascade of the five sheets plus a contents list.
@@ -160,8 +160,8 @@ async function whatYouGet() {
   await sharp({ create: { width: CANVAS_W, height: CANVAS_H, channels: 3, background: '#faf8f2' } })
     .composite([...composites, { input: textSvg, top: 0, left: 0 }])
     .jpeg({ quality: 90 })
-    .toFile(path.join(outDir, 'mockup-what-you-get.jpg'));
-  console.log(path.join(outDir, 'mockup-what-you-get.jpg'));
+    .toFile(path.join(outDir, '05-mockup-what-you-get.jpg'));
+  console.log(path.join(outDir, '05-mockup-what-you-get.jpg'));
 }
 
 // Close-up crop from the largest sheet, shown above print size.
@@ -183,8 +183,8 @@ async function detailShot() {
     .resize({ width: CANVAS_W, height: CANVAS_H, fit: 'cover' })
     .composite([{ input: caption, top: 0, left: 0 }])
     .jpeg({ quality: 90 })
-    .toFile(path.join(outDir, 'mockup-detail.jpg'));
-  console.log(path.join(outDir, 'mockup-detail.jpg'));
+    .toFile(path.join(outDir, '02-mockup-detail.jpg'));
+  console.log(path.join(outDir, '02-mockup-detail.jpg'));
 }
 
 // Three-step instant download explainer.
@@ -232,8 +232,8 @@ async function howItWorks() {
     <line x1="700" y1="1420" x2="1700" y2="1420" stroke="#d6d3cb" stroke-width="2"/>
     <text x="${CANVAS_W / 2}" y="1540" text-anchor="middle" font-family="Georgia, serif" font-size="31" letter-spacing="5" fill="#8b887e">THE FILES ARE YOURS TO KEEP · REPRINT FOR YOUR OWN WALLS ANY TIME</text>
   </svg>`);
-  await sharp(svg).jpeg({ quality: 90 }).toFile(path.join(outDir, 'mockup-how-it-works.jpg'));
-  console.log(path.join(outDir, 'mockup-how-it-works.jpg'));
+  await sharp(svg).jpeg({ quality: 90 }).toFile(path.join(outDir, '06-mockup-how-it-works.jpg'));
+  console.log(path.join(outDir, '06-mockup-how-it-works.jpg'));
 }
 
 // The ink-only transparent PNG shown on kraft paper.
@@ -270,12 +270,12 @@ async function kraftShot() {
   await sharp(bg)
     .composite([{ input: inkImg, top: Math.round((CANVAS_H + 160 - inkMeta.height) / 2), left: Math.round((CANVAS_W - inkMeta.width) / 2) }])
     .jpeg({ quality: 90 })
-    .toFile(path.join(outDir, 'mockup-kraft.jpg'));
-  console.log(path.join(outDir, 'mockup-kraft.jpg'));
+    .toFile(path.join(outDir, '07-mockup-kraft.jpg'));
+  console.log(path.join(outDir, '07-mockup-kraft.jpg'));
 }
 
-await wallMockup('mockup-black-frame.jpg', '#e7e4dd', { face: '#181613', lip: '#2b2823' });
-await wallMockup('mockup-oak-frame.jpg', '#efece6', { face: '#b08a5e', lip: '#c9a97e' });
+await wallMockup('01-mockup-black-frame.jpg', '#e7e4dd', { face: '#181613', lip: '#2b2823' });
+await wallMockup('03-mockup-oak-frame.jpg', '#efece6', { face: '#b08a5e', lip: '#c9a97e' });
 await sizeGuide();
 await whatYouGet();
 await detailShot();

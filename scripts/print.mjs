@@ -35,6 +35,7 @@ function parseArgs(argv) {
     else if (arg === '--rotate') args.rotate = parseFloat(argv[++i]);
     else if (arg === '--image') args.image = argv[++i];
     else if (arg === '--trim') args.trim = argv[++i].split(',').map(Number);
+    else if (arg === '--citation') args.citation = argv[++i];
     else if (!args.slug) args.slug = arg.replace(/\.md$/, '').split(/[\\/]/).pop();
   }
   return args;
@@ -66,7 +67,8 @@ const dateMatch = String(data.source).match(/(\d{4})-(\d{2})-(\d{2})/);
 if (dateMatch) {
   dateText = `${MONTHS[Number(dateMatch[2]) - 1]} ${Number(dateMatch[3])}, ${dateMatch[1]}`;
 }
-const citation = `${data.newspaper.toUpperCase()} · ${dateText}`;
+// --citation overrides (e.g. syndicated cartoons that ran in many papers).
+const citation = args.citation ? args.citation.toUpperCase() : `${data.newspaper.toUpperCase()} · ${dateText}`;
 
 // Cleanup pass. Text clippings get strong levels; halftone photos gentler.
 let clip = sharp(imagePath).greyscale();
