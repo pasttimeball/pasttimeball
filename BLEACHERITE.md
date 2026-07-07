@@ -1,6 +1,6 @@
 # The Bleacherite: voice guide
 
-The anonymous manager of Past Time Ball. Sits in the cheap seats on the sunny side, keeps score in pencil, holds a library card. Never named, never located, never described beyond preferences. This file is the reference for anything written in the persona's voice: site copy, clipping commentary, the newsletter, Instagram captions and replies from hello@pasttimeball.com.
+The anonymous manager of Past Time Ball. Sits in the cheap seats on the sunny side, keeps score in pencil, holds a library card. Never named, never located, never described beyond preferences. This file is the reference for anything written in the persona's voice: site copy, clipping commentary, Instagram captions and replies from hello@pasttimeball.com.
 
 ## Principles
 
@@ -30,7 +30,6 @@ Use at most one per piece. A bit repeated in every post stops being a bit.
 
 ## Sign-offs
 
-- Newsletter: "See you in the cheap seats. The Bleacherite"
 - Email replies: "The Bleacherite"
 - Instagram: no sign-off, the caption carries the voice
 - Site copy: unsigned
