@@ -1,5 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { fileURLToPath } from 'node:url';
+import sharp from 'sharp';
 
 interface Props {
   clipping: CollectionEntry<'clippings'>;
@@ -10,9 +12,26 @@ const { clipping, headingLevel = 'h2' } = Astro.props;
 const { title, team, newspaper, place, year, image, alt } = clipping.data;
 const url = `/clippings/${clipping.id}/`;
 const Heading = headingLevel;
+
+// Real dimensions so the browser reserves the right space, and so cards can
+// clip very tall clippings to a readable preview instead of a full column.
+let width = 800;
+let height = 600;
+try {
+  const meta = await sharp(fileURLToPath(new URL(`../../public${image}`, import.meta.url))).metadata();
+  if (meta.width && meta.height) {
+    width = meta.width;
+    height = meta.height;
+  }
+} catch {
+  // fall back to the old placeholder dimensions
+}
+const tall = height / width > 1.15;
 ---
 <article class="clip-card">
-  <a href={url}><img src={image} alt={alt} loading="lazy" width="800" height="600" /></a>
+  <a href={url} class:list={['clip-window', { tall }]}>
+    <img src={image} alt={alt} loading="lazy" width={width} height={height} />
+  </a>
   <Heading><a href={url}>{title}</a></Heading>
   <p class="clip-meta">
     {team ? <span class="team">{team}</span> : <span>{newspaper}</span>}<br />{place} · {year}

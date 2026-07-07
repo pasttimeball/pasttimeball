@@ -148,6 +148,31 @@ main article > h1:first-child {
 .clip-card img {
   border: 1px solid var(--rule);
   background: #fff;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Tall clippings show only their top on cards, fading into the paper;
+   the full column lives on the clipping's own page. */
+.clip-window {
+  display: block;
+  position: relative;
+}
+
+.clip-window.tall {
+  max-height: 26rem;
+  overflow: hidden;
+}
+
+.clip-window.tall::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4rem;
+  background: linear-gradient(to bottom, transparent, var(--paper-dark));
 }
 
 .clip-card h2, .clip-card h3 {
