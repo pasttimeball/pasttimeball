@@ -26,7 +26,7 @@ const { data } = matter(fs.readFileSync(mdPath, 'utf8'));
 // Prefer the print-only touched-up source (added borders, deskew) when one
 // exists, so the card shows the same art the buyer's sheets carry.
 let imagePath = path.join('public', data.image.replace(/^\//, ''));
-for (const v of ['source-straightened.png', 'source-bordered.png', 'source-deskewed.png']) {
+for (const v of ['source-straightened.png', 'source-bordered.png', 'source-deskewed.png', 'source-ad-only.png', 'source-cleaned.png']) {
   const p = path.join('prints', slug, v);
   if (fs.existsSync(p)) { imagePath = p; break; }
 }

@@ -33,16 +33,19 @@ const posts = fs
     return { slug, title: data.title, posted, draft: data.draft === true, tags: data.tags ?? [] };
   });
 
-// --- read IG export folders ---
-const igFolders = fs.existsSync(IG_DIR)
-  ? fs.readdirSync(IG_DIR).filter((f) => fs.statSync(path.join(IG_DIR, f)).isDirectory())
-  : [];
+// --- read IG export folders (root = awaiting a sitting, scheduled/ = in Business Suite) ---
+const listDirs = (p) =>
+  fs.existsSync(p) ? fs.readdirSync(p).filter((f) => fs.statSync(path.join(p, f)).isDirectory()) : [];
+const igFolders = [...listDirs(IG_DIR).filter((f) => f !== 'scheduled'), ...listDirs(path.join(IG_DIR, 'scheduled'))];
 
 // --- parse ig/SCHEDULE.md table rows ---
 const MONTHS = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11 };
 const igRows = [];
+let bsThrough = null; // "Business Suite scheduled through: Aug 3" line in SCHEDULE.md
 const schedulePath = path.join(IG_DIR, 'SCHEDULE.md');
 if (fs.existsSync(schedulePath)) {
+  const bsMatch = fs.readFileSync(schedulePath, 'utf8').match(/scheduled through:\s*([A-Z][a-z]{2})\w*\s+(\d{1,2})/i);
+  if (bsMatch) bsThrough = new Date(Date.UTC(2026, MONTHS[bsMatch[1]], Number(bsMatch[2])));
   for (const line of fs.readFileSync(schedulePath, 'utf8').split('\n')) {
     const m = line.match(/^\|\s*(.+?)\s*\|\s*(.+?)\s*\|\s*(.+?)\s*\|\s*(.+?)\s*\|/);
     if (!m || /^-+$/.test(m[1].replace(/\s/g, '')) || m[1] === 'Date') continue;
@@ -99,7 +102,7 @@ lines.push('| Date | Post | Export | Business Suite |');
 lines.push('|---|---|---|---|');
 for (const r of igUpcoming) {
   const ex = r.folder === '-' ? '-' : igFolders.includes(r.folder) ? 'ready' : 'needs `npm run ig`';
-  const bs = r.folder === '-' ? 'open slot' : r.isNew ? 'NEEDS SCHEDULING' : r.date && r.date <= new Date(Date.UTC(2026, 6, 30)) ? 'scheduled Jul 2' : 'needs 2nd sitting (~Jul 22+)';
+  const bs = r.folder === '-' ? 'open slot' : bsThrough && r.date && r.date <= bsThrough ? 'scheduled' : 'NEEDS NEXT SITTING';
   lines.push(`| ${r.raw} | ${r.what.replace(/\bNEW\b\s*/, '')} | ${ex} | ${bs} |`);
 }
 lines.push('');
@@ -109,8 +112,8 @@ lines.push('## To do');
 lines.push('');
 const needExport = upcoming.filter((p) => !igFolders.includes(p.slug));
 if (needExport.length) lines.push(`- Run \`npm run ig\` for: ${needExport.map((p) => `\`${p.slug}\``).join(', ')}`);
-const needBS = igUpcoming.filter((r) => r.isNew);
-if (needBS.length) lines.push(`- Schedule in Business Suite (marked NEW): ${needBS.map((r) => `\`${r.folder}\``).join(', ')}`);
+const needBS = igUpcoming.filter((r) => r.folder !== '-' && !(bsThrough && r.date && r.date <= bsThrough));
+if (needBS.length) lines.push(`- Business Suite next sitting (${needBS.length} rows after ${bsThrough ? fmtDate(bsThrough) : '?'}): ${needBS.map((r) => `\`${r.folder}\``).join(', ')}`);
 const unplanned = upcoming.filter((p) => !igScheduledSlugs.has(p.slug));
 if (unplanned.length)
   lines.push(`- No IG row yet (add to ig/SCHEDULE.md or skip): ${unplanned.map((p) => `\`${p.slug}\``).join(', ')}`);
