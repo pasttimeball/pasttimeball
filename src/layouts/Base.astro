@@ -11,7 +11,7 @@ interface Props {
 const { title, description, ogImage, ogType = 'website' } = Astro.props;
 const site = Astro.site ?? new URL('https://pasttimeball.com');
 const canonical = new URL(Astro.url.pathname, site);
-const ogImageUrl = new URL(ogImage ?? '/images/og-default.svg', site);
+const ogImageUrl = new URL(ogImage ?? '/images/og-default.png', site);
 const fullTitle = title === 'Past Time Ball' ? title : `${title} | Past Time Ball`;
 ---
 <html lang="en">
