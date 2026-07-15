@@ -1,27 +1,35 @@
 # Past Time Ball editorial calendar
 
-_Generated Tue, Jul 7, 2026 by `npm run calendar`. Do not hand-edit; rerun the command after changing posted dates, ig/SCHEDULE.md or ig/ exports._
+_Generated Wed, Jul 15, 2026 by `npm run calendar`. Do not hand-edit; rerun the command after changing posted dates, ig/SCHEDULE.md or ig/ exports._
 
 ## Blog queue (site posts go live at 12:00 UTC via the daily rebuild)
 
 | Goes live | Clipping | IG export | On IG schedule |
 |---|---|---|---|
-| Tue, Jul 7, 2026 | Both pitchers were tight wads when it came to a pinch (`faircloth-loses-pitchers-battle`) | ready | yes |
-| Thu, Jul 9, 2026 | This is ladies day at the ball park (`ladies-day-at-the-ball-park`) | ready | yes |
-| Fri, Jul 10, 2026 | Behold now the man that is an umpire, even a baseball umpire (`day-of-the-umpire`) | ready | yes |
-| Sat, Jul 11, 2026 | How Great Men Play the Game: Joe Wood (`how-great-men-play-joe-wood`) | ready | yes |
-| Mon, Jul 13, 2026 | The hat took a journey of several hundred feet before being overtaken (`wilson-and-fiancee-see-ball-game`) | ready | yes |
 | Tue, Jul 14, 2026 | Navigators Blow Up and Broncs Win (`navigators-blow-up`) | ready | yes |
 | Thu, Jul 16, 2026 | Batteries for today are, announces the umpire (`batteries-for-today-are`) | ready | yes |
+| Thu, Jul 16, 2026 | Indoor Base Ball. Another Game Tonight (`indoor-base-ball-another-game-tonight`) | ready | yes |
 | Fri, Jul 17, 2026 | El Paso vs. Hurley, July 4th 5th 6th (`el-paso-vs-hurley`) | ready | yes |
+| Fri, Jul 17, 2026 | Reddy the Rooter; He Sure Is a "Noble Fourth" (`reddy-the-rooter-noble-fourth`) | ready | yes |
+| Sat, Jul 18, 2026 | Opera House. Don't Forget the Base Ball Game To-Night (`opera-house-base-ball-game`) | ready | yes |
+| Sun, Jul 19, 2026 | A good, red-hot game of the national sport is assured (`base-ball-sunday-guthrie`) | ready | yes |
 | Sun, Jul 19, 2026 | Oh! But what do we care for the poor working man (`working-man-on-sunday-base-ball`) | ready | yes |
+| Mon, Jul 20, 2026 | Rules Must Be Obeyed; Changes Are Beneficial (`rules-must-be-obeyed`) | ready | yes |
 | Mon, Jul 20, 2026 | Poor Exhibition of Ball Saturday (`silver-city-wins-from-el-paso`) | ready | yes |
+| Tue, Jul 21, 2026 | Diamond Aces Aid Softball Cause (`diamond-aces-aid-softball-cause`) | ready | yes |
 | Wed, Jul 22, 2026 | Some of the biggest base ball men in the country (`biggest-base-ball-men-in-the-country`) | ready | yes |
+| Wed, Jul 22, 2026 | Locals Take First Place In Florida League (`locals-take-first-place-florida-league`) | ready | yes |
+| Thu, Jul 23, 2026 | Brent Gets to Top as the Chick Premier Hitter (`brent-gets-to-top`) | ready | yes |
 | Thu, Jul 23, 2026 | How Great Men Play the Game: Jake Daubert (`how-great-men-play-jake-daubert`) | ready | yes |
+| Fri, Jul 24, 2026 | Indoor Diamond League Inaugural Delayed (`indoor-diamond-league-inaugural-delayed`) | ready | yes |
+| Sat, Jul 25, 2026 | Ball Player Suspended (`ball-player-suspended`) | ready | yes |
 | Sat, Jul 25, 2026 | Charles M. Tesreau, the Biggest Pitcher in the World (`tesreau-biggest-pitcher`) | ready | yes |
+| Sun, Jul 26, 2026 | Chicks Won First Sunday Game (`chicks-won-first-sunday-game`) | ready | yes |
 | Sun, Jul 26, 2026 | Victoria Has Fastest Team in S.W. League (`victoria-fastest-team`) | ready | yes |
 | Tue, Jul 28, 2026 | They would have eaten St. Joe up, even as the small boy eateth plum pudding (`azureines-plum-pudding`) | ready | yes |
+| Tue, Jul 28, 2026 | Base Ball, Magnolia Bluff To-Day: Mobile vs Pensacola (`pensacola-to-play-mobile`) | ready | yes |
 | Wed, Jul 29, 2026 | The only thing we don't like to do is to umpire (`amateur-base-ball-doings`) | ready | yes |
+| Wed, Jul 29, 2026 | Indoor Baseball On Big Scale (`indoor-baseball-on-big-scale`) | ready | yes |
 | Fri, Jul 31, 2026 | Each game was liberally patronized by lovers of the national sport (`sedalia-sentinels-vs-merchants`) | ready | yes |
 | Sat, Aug 1, 2026 | Speaking of Fans, He's Got the Bug Right, This One (`speaking-of-fans-taft`) | ready | yes |
 | Mon, Aug 3, 2026 | The biggest sporting event in the history of north Missouri (`big-doings-at-brookfield`) | ready | yes |
@@ -66,36 +74,44 @@ _Generated Tue, Jul 7, 2026 by `npm run calendar`. Do not hand-edit; rerun the c
 
 ## Recently live
 
-- Sat, Jul 4, 2026: A Sane Fourth Every Way (`oregon-will-celebrate-july-4`)
-- Sat, Jul 4, 2026: Thousands of otherwise normal human beings will plead for his gore (`umpire-no-parlor-game`)
-- Fri, Jul 3, 2026: Oregon Azureines vs. St. Joe Monarchs, game called at 4 o'clock sharp (`azureines-vs-monarchs`)
-- Thu, Jul 2, 2026: Base Ball Sunday. The Producers at 3 o'clock, bring a quarter (`base-ball-sunday-tulsa-producers`)
-- Thu, Jul 2, 2026: Play ball! Attractive prices to clubs buying in quantities (`play-ball-spaulding-hale`)
+- Mon, Jul 13, 2026: The hat took a journey of several hundred feet before being overtaken (`wilson-and-fiancee-see-ball-game`)
+- Sat, Jul 11, 2026: How Great Men Play the Game: Joe Wood (`how-great-men-play-joe-wood`)
+- Fri, Jul 10, 2026: Behold now the man that is an umpire, even a baseball umpire (`day-of-the-umpire`)
+- Thu, Jul 9, 2026: This is ladies day at the ball park (`ladies-day-at-the-ball-park`)
+- Tue, Jul 7, 2026: Both pitchers were tight wads when it came to a pinch (`faircloth-loses-pitchers-battle`)
 
 ## Instagram (planned rows from ig/SCHEDULE.md)
 
 | Date | Post | Export | Business Suite |
 |---|---|---|---|
-| Tue Jul 7 | Rags Faircloth's pitchers' battle | ready | scheduled |
-| Thu Jul 9 | Ladies day at the ball park, 1891 San Antonio | ready | scheduled |
-| Fri Jul 10 | Day of the Umpire (the parable) | ready | scheduled |
-| Sat Jul 11 | Scar 1 of 3: Joe Wood, clean shoes | ready | scheduled |
-| Mon Jul 13 | Wilson and fiancee see ball game | ready | scheduled |
 | Tue Jul 14 | Navigators blow up + Cap Leidy's beets | ready | scheduled |
 | Thu Jul 16 | Batteries for today are | ready | scheduled |
+| Thu Jul 16 | 1891 armory indoor base ball (indoor thread opener) | ready | scheduled |
 | Fri Jul 17 | El Paso vs Hurley, July 4th field day ad | ready | scheduled |
+| Fri Jul 17 | Reddy the Rooter, the noble Fourth strip | ready | scheduled |
 | Sat Jul 18 | McGinnity the Iron Man | ready | scheduled |
+| Sat Jul 18 | Opera house base ball tonight, 10 cents | ready | scheduled |
 | Sun Jul 19 | Sunday base ball letters, Mexico Mo 1905 | ready | scheduled |
+| Sun Jul 19 | Guthrie vs Perry, this is good ball (Sunday pair with the letters) | ready | scheduled |
 | Mon Jul 20 | Silver City wins, score board boy edition | ready | scheduled |
+| Mon Jul 20 | Rules must be obeyed, the 1914 changes | ready | scheduled |
 | Tue Jul 21 | Allman's greatest game cartoon | ready | scheduled |
+| Tue Jul 21 | Diamond aces at the indoor league cocktail launch (AP) | ready | scheduled |
 | Wed Jul 22 | Negro National League founding, KC Sun 1920 | ready | scheduled |
+| Wed Jul 22 | Lakeland takes first, band dispenses good music | ready | scheduled |
 | Thu Jul 23 | Scar 2 of 3: Jake Daubert, shortstop's ball | ready | scheduled |
+| Thu Jul 23 | Brent tops the Chicks at .339 | ready | scheduled |
 | Fri Jul 24 | Florence Dominguez, queen candidate | ready | scheduled |
+| Fri Jul 24 | St. Louis Pandas, inaugural delayed (AP) | ready | scheduled |
 | Sat Jul 25 | Tesreau, biggest pitcher in the world (fills the open slot) | ready | scheduled |
+| Sat Jul 25 | Sherry Magee suspended | ready | scheduled |
 | Sun Jul 26 | Victoria Rosebuds, fastest team | ready | scheduled |
+| Sun Jul 26 | Chicks win first Sunday game + Altoona ad (Sunday pair) | ready | scheduled |
 | Mon Jul 27 | Play Ball: Spaulding & Hale ad | ready | scheduled |
 | Tue Jul 28 | Azureines: the plum pudding game account | ready | scheduled |
+| Tue Jul 28 | Magnolia Bluff: see line up elsewhere | ready | scheduled |
 | Wed Jul 29 | Amateur base ball doings, we don't umpire | ready | scheduled |
+| Wed Jul 29 | Bronx Coliseum photo, indoor on big scale (NEA) | ready | scheduled |
 | Thu Jul 30 | Chickasha baseball for charity | ready | scheduled |
 | Fri Jul 31 | Sedalia Sentinels vs Merchants series | ready | scheduled |
 | Sat Aug 1 | Taft the balloon fan cartoon | ready | scheduled |

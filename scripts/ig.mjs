@@ -21,29 +21,43 @@ const PAPER = { r: 178, g: 176, b: 170 };
 const HASHTAGS_BY_TAG = {
   'great-names': '#greatteamnames',
   'town-teams': '#townball',
-  'womens-teams': '#womensbaseball',
-  'minor-leagues': '#minorleaguebaseball',
-  softball: '#softballhistory',
+  'negro-leagues': '#negroleagues',
+  'indoor-base-ball': '#indoorbaseball',
+  women: '#womensbaseball',
+  cartoons: '#vintagecartoon',
+  photos: '#vintagephotos',
   ads: '#vintageads',
   stories: '#oldnews',
 };
 const FALLBACK_HASHTAGS = ['#baseballhistory', '#vintagebaseball', '#oldnewspapers'];
 
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'];
+
+// "May 31, 1909" from the loc.gov source URL, falling back to the year.
+function sourceDate(data) {
+  const m = /\/(\d{4})-(\d{2})-(\d{2})\//.exec(data.source ?? '');
+  if (!m) return String(data.year);
+  return `${MONTHS[Number(m[2]) - 1]} ${Number(m[3])}, ${m[1]}`;
+}
+
+// The caption leads with the story, not the citation: the front matter blurb
+// (or a hand-tuned igCaption override) carries the Bleacherite voice.
 function buildCaption(data) {
   const tagHashtags = (data.tags ?? []).map((t) => HASHTAGS_BY_TAG[t]).filter(Boolean);
-  const hashtags = [...new Set([...tagHashtags, ...FALLBACK_HASHTAGS])].slice(0, 3);
-  const sourceCredit = /^https?:\/\//.test(data.source)
-    ? `Source: ${data.newspaper}, ${data.year}, via ${new URL(data.source).hostname}`
-    : `Source: ${data.source}`;
-  return [
-    data.title,
+  const hashtags = [...new Set([...tagHashtags, ...FALLBACK_HASHTAGS])].slice(0, 6);
+  const lead = (data.igCaption ?? data.blurb ?? '').trim();
+  const credit = /^https?:\/\//.test(data.source ?? '')
+    ? `${data.newspaper}, ${sourceDate(data)}, via loc.gov.`
+    : `${data.newspaper}, ${data.year}.`;
+  const lines = [data.title, ''];
+  if (lead) lines.push(lead, '');
+  lines.push(
+    `${credit} Full clipping and the story behind it at pasttimeball.com, link in bio.`,
     '',
-    data.team ? `The ${data.team}. ${data.place}, ${data.year}.` : `${data.place}, ${data.year}.`,
-    '',
-    sourceCredit,
-    '',
-    hashtags.join(' '),
-  ].join('\n');
+    hashtags.join(' ')
+  );
+  return lines.join('\n');
 }
 
 // Mean brightness per row of a grayscale buffer.
@@ -102,6 +116,20 @@ function writeAlt(outDir, alt, panelCount) {
   fs.writeFileSync(path.join(outDir, 'alt.txt'), lines.join('\n') + '\n');
 }
 
+// Rewrite caption.txt in an existing export folder (ig/<slug>/ or
+// ig/scheduled/<slug>/) without touching the panels.
+function refreshCaption(mdPath) {
+  const { data } = matter(fs.readFileSync(mdPath, 'utf8'));
+  const slug = path.basename(mdPath, '.md');
+  const outDir = [path.join('ig', slug), path.join('ig', 'scheduled', slug)].find(fs.existsSync);
+  if (!outDir) {
+    console.log(`${slug}: no export folder, skipped`);
+    return;
+  }
+  fs.writeFileSync(path.join(outDir, 'caption.txt'), buildCaption(data) + '\n');
+  console.log(`${slug}: caption refreshed (${outDir})`);
+}
+
 async function processClipping(mdPath) {
   const { data } = matter(fs.readFileSync(mdPath, 'utf8'));
   const slug = path.basename(mdPath, '.md');
@@ -158,6 +186,12 @@ async function processClipping(mdPath) {
 }
 
 let files = process.argv.slice(2);
+const captionsOnly = files[0] === '--captions-only';
+if (captionsOnly) files = files.slice(1);
+if (files[0] === '--all' || (captionsOnly && files.length === 0)) {
+  const dir = 'src/content/clippings';
+  files = fs.readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => path.join(dir, f));
+}
 if (files[0] === '--live') {
   const dir = 'src/content/clippings';
   const today = new Date().toISOString().slice(0, 10);
@@ -173,7 +207,7 @@ if (files[0] === '--live') {
     });
 }
 if (files.length === 0) {
-  console.error('Usage: npm run ig -- path/to/clipping.md [...] | --live');
+  console.error('Usage: npm run ig -- path/to/clipping.md [...] | --live | --captions-only [files]');
   process.exit(1);
 }
-for (const f of files) await processClipping(f);
+for (const f of files) captionsOnly ? refreshCaption(f) : await processClipping(f);
