@@ -32,6 +32,7 @@ _Generated Wed, Jul 15, 2026 by `npm run calendar`. Do not hand-edit; rerun the 
 | Wed, Jul 29, 2026 | The only thing we don't like to do is to umpire (`amateur-base-ball-doings`) | ready | yes |
 | Wed, Jul 29, 2026 | Indoor Baseball On Big Scale (`indoor-baseball-on-big-scale`) | ready | yes |
 | Thu, Jul 30, 2026 | Two Oil City base ball stars extend the scope of their operations (`oil-city-base-ball-stars`) | ready | yes |
+| Fri, Jul 31, 2026 | How Great Men Play the Game: Jimmy Archer (`how-great-men-play-jimmy-archer`) | ready | yes |
 | Fri, Jul 31, 2026 | Each game was liberally patronized by lovers of the national sport (`sedalia-sentinels-vs-merchants`) | ready | yes |
 | Sat, Aug 1, 2026 | Speaking of Fans, He's Got the Bug Right, This One (`speaking-of-fans-taft`) | ready | yes |
 | Mon, Aug 3, 2026 | The biggest sporting event in the history of north Missouri (`big-doings-at-brookfield`) | ready | yes |
@@ -73,6 +74,11 @@ _Generated Wed, Jul 15, 2026 by `npm run calendar`. Do not hand-edit; rerun the 
 | Mon, Dec 21, 2026 | Jack Frost is playing hide and seek (`jack-frost-hide-and-seek`) | ready | yes |
 | Mon, Mar 1, 2027 | He wanted to boost his salary of last year by just exactly $25 (`annis-wants-more-salary`) | ready | yes |
 | Wed, Mar 17, 2027 | Retrieving Lost Laurels, New Nationals Now Start on Road to Fame (`new-nationals-road-to-fame`) | ready | yes |
+
+## Drafts / undated
+
+- "Eddie" Plank, the Athletics' Lanky Southpaw (`eddie-plank-lanky-southpaw`)
+- Fans of the Southwest Will See the Giants and White Sox In El Paso (`giants-and-white-sox-in-el-paso`)
 
 ## Recently live
 
@@ -118,6 +124,7 @@ _Generated Wed, Jul 15, 2026 by `npm run calendar`. Do not hand-edit; rerun the 
 | Thu Jul 30 | Chickasha baseball for charity | ready | scheduled |
 | Thu Jul 30 | Slesnick and Grove extend the scope of their operations | ready | scheduled |
 | Fri Jul 31 | Sedalia Sentinels vs Merchants series | ready | scheduled |
+| Fri Jul 31 | Scar bonus: Jimmy Archer's squat throw and everlasting smile | ready | scheduled |
 | Sat Aug 1 | Taft the balloon fan cartoon | ready | scheduled |
 | Sun Aug 2 | Yellville 1 of 4: No game on the Fourth | ready | scheduled |
 | Mon Aug 3 | AL All Stars at Brookfield, 1921 | ready | scheduled |
