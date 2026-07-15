@@ -26,10 +26,12 @@ _Generated Wed, Jul 15, 2026 by `npm run calendar`. Do not hand-edit; rerun the 
 | Sat, Jul 25, 2026 | Charles M. Tesreau, the Biggest Pitcher in the World (`tesreau-biggest-pitcher`) | ready | yes |
 | Sun, Jul 26, 2026 | Chicks Won First Sunday Game (`chicks-won-first-sunday-game`) | ready | yes |
 | Sun, Jul 26, 2026 | Victoria Has Fastest Team in S.W. League (`victoria-fastest-team`) | ready | yes |
+| Mon, Jul 27, 2026 | Base Ball Shoes, $2.50 (`base-ball-shoes`) | ready | yes |
 | Tue, Jul 28, 2026 | They would have eaten St. Joe up, even as the small boy eateth plum pudding (`azureines-plum-pudding`) | ready | yes |
 | Tue, Jul 28, 2026 | Base Ball, Magnolia Bluff To-Day: Mobile vs Pensacola (`pensacola-to-play-mobile`) | ready | yes |
 | Wed, Jul 29, 2026 | The only thing we don't like to do is to umpire (`amateur-base-ball-doings`) | ready | yes |
 | Wed, Jul 29, 2026 | Indoor Baseball On Big Scale (`indoor-baseball-on-big-scale`) | ready | yes |
+| Thu, Jul 30, 2026 | Two Oil City base ball stars extend the scope of their operations (`oil-city-base-ball-stars`) | ready | yes |
 | Fri, Jul 31, 2026 | Each game was liberally patronized by lovers of the national sport (`sedalia-sentinels-vs-merchants`) | ready | yes |
 | Sat, Aug 1, 2026 | Speaking of Fans, He's Got the Bug Right, This One (`speaking-of-fans-taft`) | ready | yes |
 | Mon, Aug 3, 2026 | The biggest sporting event in the history of north Missouri (`big-doings-at-brookfield`) | ready | yes |
@@ -108,11 +110,13 @@ _Generated Wed, Jul 15, 2026 by `npm run calendar`. Do not hand-edit; rerun the 
 | Sun Jul 26 | Victoria Rosebuds, fastest team | ready | scheduled |
 | Sun Jul 26 | Chicks win first Sunday game + Altoona ad (Sunday pair) | ready | scheduled |
 | Mon Jul 27 | Play Ball: Spaulding & Hale ad | ready | scheduled |
+| Mon Jul 27 | Levi & Co. base ball shoes, $2.50 (outfit-day pair with Spaulding & Hale) | ready | scheduled |
 | Tue Jul 28 | Azureines: the plum pudding game account | ready | scheduled |
 | Tue Jul 28 | Magnolia Bluff: see line up elsewhere | ready | scheduled |
 | Wed Jul 29 | Amateur base ball doings, we don't umpire | ready | scheduled |
 | Wed Jul 29 | Bronx Coliseum photo, indoor on big scale (NEA) | ready | scheduled |
 | Thu Jul 30 | Chickasha baseball for charity | ready | scheduled |
+| Thu Jul 30 | Slesnick and Grove extend the scope of their operations | ready | scheduled |
 | Fri Jul 31 | Sedalia Sentinels vs Merchants series | ready | scheduled |
 | Sat Aug 1 | Taft the balloon fan cartoon | ready | scheduled |
 | Sun Aug 2 | Yellville 1 of 4: No game on the Fourth | ready | scheduled |
