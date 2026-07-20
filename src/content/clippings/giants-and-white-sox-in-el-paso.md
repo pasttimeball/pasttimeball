@@ -1,4 +1,4 @@
----
+﻿---
 title: "Fans of the Southwest Will See the Giants and White Sox In El Paso"
 place: "El Paso, Texas"
 year: 1913
@@ -7,8 +7,7 @@ source: "https://www.loc.gov/resource/sn88084272/1913-08-13/ed-1/?sp=9"
 image: "/images/clippings/giants-and-white-sox-in-el-paso.jpg"
 alt: "Story headed Giants and White Sox Will Play Three Games In El Paso, reporting the chamber of commerce gave a big guarantee for the series as a feature of the Os-Aple Jubilee, that for three days the city will be the center of the universe for baseball fans of the southwest, and that the teams leave the east after the world's series and arrive probably November 4 for the opening game."
 tags: ["stories"]
-posted: 2099-01-01
-draft: true
+posted: 2026-08-09
 blurb: "August 1913: the Giants and White Sox are coming to El Paso for three games after the World's Series, and the Herald's compositor gets so excited the type stutters: for three days this city will be the center of the universe for the universe for the baseball fans of the baseball fans of the southwest."
 igCaption: "August 1913, and El Paso gets the news: the New York Giants and Chicago White Sox will play three games there after the World's Series, courtesy of a good stiff guarantee from the chamber of commerce, as the feature of the Os-Aple Jubilee. The compositor was as excited as the town, and set it so: \"for three days this city will be the center of the universe for the universe for the baseball fans of the baseball fans of the sotuhwest.\" When the center of the universe comes to town, a little stutter in the type is understandable."
 ---

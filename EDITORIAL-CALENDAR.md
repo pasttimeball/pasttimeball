@@ -1,12 +1,11 @@
 # Past Time Ball editorial calendar
 
-_Generated Wed, Jul 15, 2026 by `npm run calendar`. Do not hand-edit; rerun the command after changing posted dates, ig/SCHEDULE.md or ig/ exports._
+_Generated Fri, Jul 17, 2026 by `npm run calendar`. Do not hand-edit; rerun the command after changing posted dates, ig/SCHEDULE.md or ig/ exports._
 
 ## Blog queue (site posts go live at 12:00 UTC via the daily rebuild)
 
 | Goes live | Clipping | IG export | On IG schedule |
 |---|---|---|---|
-| Tue, Jul 14, 2026 | Navigators Blow Up and Broncs Win (`navigators-blow-up`) | ready | yes |
 | Thu, Jul 16, 2026 | Batteries for today are, announces the umpire (`batteries-for-today-are`) | ready | yes |
 | Thu, Jul 16, 2026 | Indoor Base Ball. Another Game Tonight (`indoor-base-ball-another-game-tonight`) | ready | yes |
 | Fri, Jul 17, 2026 | El Paso vs. Hurley, July 4th 5th 6th (`el-paso-vs-hurley`) | ready | yes |
@@ -35,10 +34,14 @@ _Generated Wed, Jul 15, 2026 by `npm run calendar`. Do not hand-edit; rerun the 
 | Fri, Jul 31, 2026 | How Great Men Play the Game: Jimmy Archer (`how-great-men-play-jimmy-archer`) | ready | yes |
 | Fri, Jul 31, 2026 | Each game was liberally patronized by lovers of the national sport (`sedalia-sentinels-vs-merchants`) | ready | yes |
 | Sat, Aug 1, 2026 | Speaking of Fans, He's Got the Bug Right, This One (`speaking-of-fans-taft`) | ready | yes |
+| Sun, Aug 2, 2026 | Fans Settle Burning Question (`fans-settle-burning-question`) | ready | yes |
 | Mon, Aug 3, 2026 | The biggest sporting event in the history of north Missouri (`big-doings-at-brookfield`) | ready | yes |
 | Tue, Aug 4, 2026 | How Great Men Play the Game: Joe Jackson (`how-great-men-play-joe-jackson`) | ready | yes |
+| Wed, Aug 5, 2026 | Under Marquis of Queensbury Rules (`west-side-challenges-east-side`) | ready | yes |
 | Thu, Aug 6, 2026 | What About a Ball Park? (`what-about-a-ball-park`) | ready | yes |
+| Fri, Aug 7, 2026 | "Eddie" Plank, the Athletics' Lanky Southpaw (`eddie-plank-lanky-southpaw`) | ready | yes |
 | Sat, Aug 8, 2026 | Extry! Poor Old Man Is Mobbed Once More (`poor-old-man-is-mobbed`) | ready | yes |
+| Sun, Aug 9, 2026 | Fans of the Southwest Will See the Giants and White Sox In El Paso (`giants-and-white-sox-in-el-paso`) | ready | yes |
 | Mon, Aug 10, 2026 | Hoosiers Coming to Play Bronchos (`hoosiers-coming-to-play-bronchos`) | ready | yes |
 | Wed, Aug 12, 2026 | Base Ball Exclusively. No Cheap Side Lines (`sporting-news-base-ball-paper`) | ready | yes |
 | Fri, Aug 14, 2026 | How Great Men Play the Game: Honus Wagner (`how-great-men-play-honus-wagner`) | ready | yes |
@@ -70,69 +73,74 @@ _Generated Wed, Jul 15, 2026 by `npm run calendar`. Do not hand-edit; rerun the 
 | Tue, Oct 6, 2026 | How Great Men Play the Game: Heine Zimmerman (`how-great-men-play-heine-zimmerman`) | ready | yes |
 | Thu, Oct 8, 2026 | He is a wonder and you may see him (`swifts-vs-nationals`) | ready | yes |
 | Sat, Oct 10, 2026 | How Great Men Play the Game: Thomas Seaton (`how-great-men-play-thomas-seaton`) | ready | yes |
+| Tue, Oct 20, 2026 | See Jimmy Foxx, World's Greatest Home-Run Hitter (`american-league-all-stars-vs-la-junta`) | ready | yes |
+| Tue, Oct 20, 2026 | Games Start at 3:45 and 8:30 P. M. (`games-start-at-345-and-830`) | ready | yes |
+| Thu, Oct 22, 2026 | Monarch Ball Club Plays Junta Soon (`monarch-ball-club-plays-junta-soon`) | ready | yes |
+| Sat, Oct 24, 2026 | Champion Laredo Oilers of 1927 (`champion-laredo-oilers-of-1927`) | ready | yes |
+| Sat, Dec 12, 2026 | Big Leagues May Admit Children for Two-Bits (`big-leagues-may-admit-children-for-two-bits`) | ready | yes |
+| Sat, Dec 12, 2026 | The Fighting First Baseman (`the-fighting-first-baseman`) | ready | yes |
 | Wed, Dec 16, 2026 | Base Ball Goods for Xmas (`base-ball-goods-for-xmas`) | ready | yes |
 | Mon, Dec 21, 2026 | Jack Frost is playing hide and seek (`jack-frost-hide-and-seek`) | ready | yes |
 | Mon, Mar 1, 2027 | He wanted to boost his salary of last year by just exactly $25 (`annis-wants-more-salary`) | ready | yes |
 | Wed, Mar 17, 2027 | Retrieving Lost Laurels, New Nationals Now Start on Road to Fame (`new-nationals-road-to-fame`) | ready | yes |
-
-## Drafts / undated
-
-- "Eddie" Plank, the Athletics' Lanky Southpaw (`eddie-plank-lanky-southpaw`)
-- Fans of the Southwest Will See the Giants and White Sox In El Paso (`giants-and-white-sox-in-el-paso`)
+| Fri, Jul 16, 2027 | Grand Celebration at Reyno, Ark. (`grand-celebration-at-reyno`) | ready | yes |
 
 ## Recently live
 
+- Tue, Jul 14, 2026: Navigators Blow Up and Broncs Win (`navigators-blow-up`)
 - Mon, Jul 13, 2026: The hat took a journey of several hundred feet before being overtaken (`wilson-and-fiancee-see-ball-game`)
 - Sat, Jul 11, 2026: How Great Men Play the Game: Joe Wood (`how-great-men-play-joe-wood`)
 - Fri, Jul 10, 2026: Behold now the man that is an umpire, even a baseball umpire (`day-of-the-umpire`)
 - Thu, Jul 9, 2026: This is ladies day at the ball park (`ladies-day-at-the-ball-park`)
-- Tue, Jul 7, 2026: Both pitchers were tight wads when it came to a pinch (`faircloth-loses-pitchers-battle`)
 
 ## Instagram (planned rows from ig/SCHEDULE.md)
 
 | Date | Post | Export | Business Suite |
 |---|---|---|---|
-| Tue Jul 14 | Navigators blow up + Cap Leidy's beets | ready | scheduled |
 | Thu Jul 16 | Batteries for today are | ready | scheduled |
 | Thu Jul 16 | 1891 armory indoor base ball (indoor thread opener) | ready | scheduled |
 | Fri Jul 17 | El Paso vs Hurley, July 4th field day ad | ready | scheduled |
 | Fri Jul 17 | Reddy the Rooter, the noble Fourth strip | ready | scheduled |
 | Sat Jul 18 | McGinnity the Iron Man | ready | scheduled |
-| Sat Jul 18 | Opera house base ball tonight, 10 cents | ready | scheduled |
+| Sat Jul 18 | Opera house base ball tonight, 10 cents (indoor thread) | ready | scheduled |
 | Sun Jul 19 | Sunday base ball letters, Mexico Mo 1905 | ready | scheduled |
 | Sun Jul 19 | Guthrie vs Perry, this is good ball (Sunday pair with the letters) | ready | scheduled |
 | Mon Jul 20 | Silver City wins, score board boy edition | ready | scheduled |
 | Mon Jul 20 | Rules must be obeyed, the 1914 changes | ready | scheduled |
 | Tue Jul 21 | Allman's greatest game cartoon | ready | scheduled |
-| Tue Jul 21 | Diamond aces at the indoor league cocktail launch (AP) | ready | scheduled |
+| Tue Jul 21 | Diamond aces at the indoor league cocktail launch (indoor thread) | ready | scheduled |
 | Wed Jul 22 | Negro National League founding, KC Sun 1920 | ready | scheduled |
 | Wed Jul 22 | Lakeland takes first, band dispenses good music | ready | scheduled |
 | Thu Jul 23 | Scar 2 of 3: Jake Daubert, shortstop's ball | ready | scheduled |
 | Thu Jul 23 | Brent tops the Chicks at .339 | ready | scheduled |
 | Fri Jul 24 | Florence Dominguez, queen candidate | ready | scheduled |
-| Fri Jul 24 | St. Louis Pandas, inaugural delayed (AP) | ready | scheduled |
-| Sat Jul 25 | Tesreau, biggest pitcher in the world (fills the open slot) | ready | scheduled |
+| Fri Jul 24 | St. Louis Pandas, inaugural delayed (indoor thread) | ready | scheduled |
+| Sat Jul 25 | Tesreau, biggest pitcher in the world | ready | scheduled |
 | Sat Jul 25 | Sherry Magee suspended | ready | scheduled |
 | Sun Jul 26 | Victoria Rosebuds, fastest team | ready | scheduled |
 | Sun Jul 26 | Chicks win first Sunday game + Altoona ad (Sunday pair) | ready | scheduled |
 | Mon Jul 27 | Play Ball: Spaulding & Hale ad | ready | scheduled |
-| Mon Jul 27 | Levi & Co. base ball shoes, $2.50 (outfit-day pair with Spaulding & Hale) | ready | scheduled |
+| Mon Jul 27 | Levi & Co. base ball shoes, $2.50 (outfit-day pair) | ready | scheduled |
 | Tue Jul 28 | Azureines: the plum pudding game account | ready | scheduled |
 | Tue Jul 28 | Magnolia Bluff: see line up elsewhere | ready | scheduled |
 | Wed Jul 29 | Amateur base ball doings, we don't umpire | ready | scheduled |
-| Wed Jul 29 | Bronx Coliseum photo, indoor on big scale (NEA) | ready | scheduled |
+| Wed Jul 29 | Bronx Coliseum photo, indoor on big scale (indoor thread closer) | ready | scheduled |
 | Thu Jul 30 | Chickasha baseball for charity | ready | scheduled |
 | Thu Jul 30 | Slesnick and Grove extend the scope of their operations | ready | scheduled |
 | Fri Jul 31 | Sedalia Sentinels vs Merchants series | ready | scheduled |
-| Fri Jul 31 | Scar bonus: Jimmy Archer's squat throw and everlasting smile | ready | scheduled |
+| Fri Jul 31 | Scar bonus: Jimmy Archer (added after the Jul 14 sitting, needs a quick add) | ready | scheduled |
 | Sat Aug 1 | Taft the balloon fan cartoon | ready | scheduled |
 | Sun Aug 2 | Yellville 1 of 4: No game on the Fourth | ready | scheduled |
+| Sun Aug 2 | Shibe Park balcony bugs go shirtless | ready | scheduled |
 | Mon Aug 3 | AL All Stars at Brookfield, 1921 | ready | scheduled |
 | Tue Aug 4 | Scar 3 of 3: Joe Jackson, Cobb lookalike | ready | NEEDS NEXT SITTING |
 | Wed Aug 5 | Yellville 2 of 4: Umpire wanted (referee) | ready | NEEDS NEXT SITTING |
+| Wed Aug 5 | West Side challenges the Di Dappers, Marquis of Queensbury rules | ready | NEEDS NEXT SITTING |
 | Thu Aug 6 | What About a Ball Park?, Farmington 1922 | ready | NEEDS NEXT SITTING |
+| Fri Aug 7 | Eddie Plank, the Athletics' lanky southpaw (pairs with Tesreau) | ready | NEEDS NEXT SITTING |
 | Sat Aug 8 | Yellville 3 of 4: Boy watches from tree | ready | NEEDS NEXT SITTING |
 | Sat Aug 8 | Poor old man is mobbed once more | ready | NEEDS NEXT SITTING |
+| Sun Aug 9 | Giants and White Sox coming to El Paso (the stuttering compositor) | ready | NEEDS NEXT SITTING |
 | Mon Aug 10 | Hoosiers coming to play Bronchos | ready | NEEDS NEXT SITTING |
 | Tue Aug 11 | Yellville 4 of 4: Call the score | ready | NEEDS NEXT SITTING |
 | Wed Aug 12 | Sporting News ad, 1910 | ready | NEEDS NEXT SITTING |
@@ -151,8 +159,7 @@ _Generated Wed, Jul 15, 2026 by `npm run calendar`. Do not hand-edit; rerun the 
 | Tue Sep 1 | Old Timers vs Elks, lunch on third base | ready | NEEDS NEXT SITTING |
 | Thu Sep 3 | Boston Bloomer Girls road trip | ready | NEEDS NEXT SITTING |
 | Sat Sep 5 | Scar: Ed Walsh, the spitball recipe | ready | NEEDS NEXT SITTING |
-| Mon Sep 7 | Base ball today and Labor Day, Pine Bluff 1920 (Labor Day post) | ready | NEEDS NEXT SITTING |
-| Mon Sep 7 | (Labor Day post already scheduled, Phase 6) | ready | NEEDS NEXT SITTING |
+| Mon Sep 7 | Base ball today and Labor Day, Pine Bluff 1920 (ON Labor Day) | ready | NEEDS NEXT SITTING |
 | Wed Sep 9 | The mayor addresses the fans, mid-sentence | ready | NEEDS NEXT SITTING |
 | Fri Sep 11 | Scar: Frank Baker, week end home runs | ready | NEEDS NEXT SITTING |
 | Sun Sep 13 | Savannah vs Charleston, ladies free | ready | NEEDS NEXT SITTING |
@@ -162,17 +169,26 @@ _Generated Wed, Jul 15, 2026 by `npm run calendar`. Do not hand-edit; rerun the 
 | Mon Sep 21 | Scar: Chief Bender, batters ballooning | ready | NEEDS NEXT SITTING |
 | Wed Sep 23 | Ardmore girls + Nellie Riley's ten strikeouts | ready | NEEDS NEXT SITTING |
 | Fri Sep 25 | Scar: George Gibson, peg to second | ready | NEEDS NEXT SITTING |
-| Mon Sep 28 | Indoor base ball for the Price Cup (ran Sep 28, 1904) | ready | NEEDS NEXT SITTING |
+| Mon Sep 28 | Indoor base ball for the Price Cup (122 years to the day, keep the date) | ready | NEEDS NEXT SITTING |
 | Wed Sep 30 | Stout tailors ad: $25 suit for the first homer | ready | NEEDS NEXT SITTING |
 | Fri Oct 2 | Scar: Mike Doolan, Scrappy is his middle name | ready | NEEDS NEXT SITTING |
 | Sun Oct 4 | Potomacs vs Cuban Stars banner | ready | NEEDS NEXT SITTING |
 | Tue Oct 6 | Scar: Heine Zimmerman, clouts the pitchout | ready | NEEDS NEXT SITTING |
 | Thu Oct 8 | B. H. Swifts: he is a wonder and you may see him | ready | NEEDS NEXT SITTING |
 | Sat Oct 10 | Scar: Thomas Seaton, the impenetrable net | ready | NEEDS NEXT SITTING |
+| Tue Oct 20 | Monterrey vs La Junta doubleheader (page ran Oct 20, 1935, keep the date) | ready | NEEDS NEXT SITTING |
+| Tue Oct 20 | BASEBALL: AL All-Stars vs La Junta, see Jimmy Foxx (same 1935 page) | ready | NEEDS NEXT SITTING |
+| Thu Oct 22 | Kansas City Monarchs coming to Nuevo Laredo (Satchel Paige) | ready | NEEDS NEXT SITTING |
+| Sat Oct 24 | Champion Laredo Oilers of 1927 team photo (Mule Watson) | ready | NEEDS NEXT SITTING |
+| Sat Dec 12 | Landis plan: kids for 25 cents (page ran Dec 12, 1929, keep the date) | ready | NEEDS NEXT SITTING |
+| Sat Dec 12 | Feg Murray cartoon: Art (The Great) Shires (same 1929 page) | ready | NEEDS NEXT SITTING |
 | Wed Dec 16 | Base ball goods for Xmas (holiday post) | ready | NEEDS NEXT SITTING |
-| Mon Dec 21 | Jack Frost sandlot roundup, Omaha 1918 | ready | NEEDS NEXT SITTING |
+| Mon Dec 21 | Jack Frost sandlot roundup, Omaha 1918 (tease the Xmas ad) | ready | NEEDS NEXT SITTING |
+| Mon Mar 1, 2027 | Annis holds out for exactly $25 (ran Mar 1, 1909, contract season) | ready | NEEDS NEXT SITTING |
+| Wed Mar 17, 2027 | New Nationals comic: the triple decoration (St. Patrick's) | ready | NEEDS NEXT SITTING |
+| Fri Jul 16, 2027 | Grand celebration at Reyno: FATS AND LEANS (event was Sat Jul 16, 1910) | ready | NEEDS NEXT SITTING |
 
 ## To do
 
-- Business Suite next sitting (43 rows after Mon, Aug 3, 2026): `how-great-men-play-joe-jackson`, `yellville-umpire-referee`, `what-about-a-ball-park`, `yellville-boy-in-tree`, `poor-old-man-is-mobbed`, `hoosiers-coming-to-play-bronchos`, `yellville-call-the-score`, `sporting-news-base-ball-paper`, `mena-carpenters-painters`, `how-great-men-play-honus-wagner`, `rose-creek-married-vs-single`, `spalding-base-ball-guide-1906`, `how-great-men-play-christy-mathewson`, `base-ball-sunday-tulsa-producers`, `waterloo-vs-brownies`, `women-play-base-ball-baxter`, `how-great-men-play-eddie-collins`, `american-giants-vs-all-stars`, `nashville-all-stars`, `how-great-men-play-stuffy-mcinnes`, `old-timers-vs-elks`, `new-hartford-bloomer-girls`, `how-great-men-play-ed-walsh`, `base-ball-today-and-labor-day`, `base-ball-today-and-labor-day`, `mayor-addresses-the-fans`, `how-great-men-play-frank-baker`, `savannah-vs-charleston-ladies-day`, `how-great-men-play-tris-speaker`, `team-of-base-ball-artists`, `guaranteed-base-ball-supplies`, `how-great-men-play-chief-bender`, `ardmore-girls-to-play-base-ball`, `how-great-men-play-george-gibson`, `indoor-base-ball-ladies-night`, `stout-suit-first-homer`, `how-great-men-play-mike-doolan`, `potomacs-vs-cuban-stars`, `how-great-men-play-heine-zimmerman`, `swifts-vs-nationals`, `how-great-men-play-thomas-seaton`, `base-ball-goods-for-xmas`, `jack-frost-hide-and-seek`
+- Business Suite next sitting (54 rows after Mon, Aug 3, 2026): `how-great-men-play-joe-jackson`, `yellville-umpire-referee`, `west-side-challenges-east-side`, `what-about-a-ball-park`, `eddie-plank-lanky-southpaw`, `yellville-boy-in-tree`, `poor-old-man-is-mobbed`, `giants-and-white-sox-in-el-paso`, `hoosiers-coming-to-play-bronchos`, `yellville-call-the-score`, `sporting-news-base-ball-paper`, `mena-carpenters-painters`, `how-great-men-play-honus-wagner`, `rose-creek-married-vs-single`, `spalding-base-ball-guide-1906`, `how-great-men-play-christy-mathewson`, `base-ball-sunday-tulsa-producers`, `waterloo-vs-brownies`, `women-play-base-ball-baxter`, `how-great-men-play-eddie-collins`, `american-giants-vs-all-stars`, `nashville-all-stars`, `how-great-men-play-stuffy-mcinnes`, `old-timers-vs-elks`, `new-hartford-bloomer-girls`, `how-great-men-play-ed-walsh`, `base-ball-today-and-labor-day`, `mayor-addresses-the-fans`, `how-great-men-play-frank-baker`, `savannah-vs-charleston-ladies-day`, `how-great-men-play-tris-speaker`, `team-of-base-ball-artists`, `guaranteed-base-ball-supplies`, `how-great-men-play-chief-bender`, `ardmore-girls-to-play-base-ball`, `how-great-men-play-george-gibson`, `indoor-base-ball-ladies-night`, `stout-suit-first-homer`, `how-great-men-play-mike-doolan`, `potomacs-vs-cuban-stars`, `how-great-men-play-heine-zimmerman`, `swifts-vs-nationals`, `how-great-men-play-thomas-seaton`, `games-start-at-345-and-830`, `american-league-all-stars-vs-la-junta`, `monarch-ball-club-plays-junta-soon`, `champion-laredo-oilers-of-1927`, `big-leagues-may-admit-children-for-two-bits`, `the-fighting-first-baseman`, `base-ball-goods-for-xmas`, `jack-frost-hide-and-seek`, `annis-wants-more-salary`, `new-nationals-road-to-fame`, `grand-celebration-at-reyno`
 - Business Suite schedules max 29 days out; plan a sitting roughly every 4 weeks.

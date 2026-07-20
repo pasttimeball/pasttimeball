@@ -12,6 +12,10 @@ ig/
 # print-ready sheets (regenerate with npm run print)
 prints/
 
+# Etsy API tooling and credentials (local only; repo is public)
+pasttimeballapp.txt
+etsy/
+
 # OS noise
 Thumbs.db
 .DS_Store
